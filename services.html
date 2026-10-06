@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Moinuddin — Services | Web Design &amp; Development</title>
+  <meta name="description" content="Explore Moinuddin's services. Interactive spatial capability experience covering web design, UI/UX systems, frontend engineering, WordPress development, and performance optimization.">
+  <link rel="canonical" href="https://moinuddin.com/services.html">
+  
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://moinuddin.com/services.html">
+  <meta property="og:title" content="Moinuddin — Services | Web Design &amp; Development">
+  <meta property="og:description" content="Digital experiences designed to look distinctive, work beautifully, and perform reliably. Interactive service capabilities of Moinuddin.">
+  <meta property="og:image" content="assets/images/moinuddin.webp">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            day: {
+              bg: '#F4F5F7',
+              primary: '#0B0D10',
+              secondary: '#667085',
+              surface: '#FFFFFF',
+              accent: '#FF5C35',
+              border: '#D9DDE3'
+            },
+            night: {
+              bg: '#08090C',
+              primary: '#F5F7FA',
+              secondary: '#98A2B3',
+              surface: '#111318',
+              accent: '#FF6B45',
+              border: '#242832'
+            }
+          },
+          fontFamily: {
+            sans: ['Space Grotesk', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            serif: ['Cinzel', 'Playfair Display', 'Georgia', 'serif'],
+            mono: ['JetBrains Mono', 'Courier New', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS Variables & Theme Foundations */
+    :root {
+      --bg: #F4F5F7;
+      --primary: #0B0D10;
+      --secondary: #667085;
+      --accent: #FF5C35;
+      --surface: #FFFFFF;
+      --border: #D9DDE3;
+      --grid: rgba(11, 13, 16, 0.04);
+    }
+
+    .dark {
+      --bg: #08090C;
+      --primary: #F5F7FA;
+      --secondary: #98A2B3;
+      --accent: #FF6B45;
+      --surface: #111318;
+      --border: #242832;
+      --grid: rgba(245, 247, 250, 0.03);
+    }
+
+    * {
+      box-sizing: border-box;
+      cursor: none; /* Override default mouse cursor */
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--primary);
+      transition: background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1), color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow-x: hidden;
+      font-family: 'Space Grotesk', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Spatial Canvas Baseline */
+    .viewport-canvas {
+      perspective: 1200px;
+      transform-style: preserve-3d;
+    }
+
+    .layer-bg { transform: translateZ(-60px) scale(1.05); }
+    .layer-mid { transform: translateZ(0px); }
+    .layer-fore { transform: translateZ(40px); }
+
+    /* Fine Grid Overlay */
+    .bg-grid-pattern {
+      background-image: 
+        linear-gradient(to right, var(--grid) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+      background-size: 80px 80px;
+      background-attachment: fixed;
+    }
+
+    /* Custom Cursor */
+    #cursor-dot {
+      pointer-events: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 9999;
+      width: 12px;
+      height: 12px;
+      background-color: var(--accent);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                  height 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                  background-color 0.3s ease, 
+                  border-radius 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      mix-blend-mode: difference;
+    }
+
+    #cursor-dot span {
+      opacity: 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #000;
+      transition: opacity 0.2s ease;
+    }
+
+    #cursor-dot.expand {
+      width: 60px;
+      height: 60px;
+      background-color: #FFFFFF;
+      mix-blend-mode: normal;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    #cursor-dot.expand span {
+      opacity: 1;
+    }
+
+    /* Scroll Reveal & Clip Animations */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+    .reveal-item.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .clip-reveal {
+      clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+      transition: clip-path 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: clip-path;
+    }
+    .clip-reveal.revealed {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+
+    /* Spatial Explorer Specifics */
+    .service-node {
+      transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity, filter;
+    }
+    
+    .service-explorer-container:hover .service-node {
+      opacity: 0.3;
+      filter: blur(2px);
+      transform: scale(0.98);
+    }
+
+    .service-explorer-container:hover .service-node:hover {
+      opacity: 1;
+      filter: blur(0px);
+      transform: scale(1.04) translateZ(30px);
+    }
+
+    .service-node.active-focus {
+      opacity: 1 !important;
+      filter: blur(0px) !important;
+      color: var(--accent) !important;
+    }
+
+    /* Output Tag Pill Styling */
+    .output-pill {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .output-pill:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      color: var(--accent);
+    }
+
+    /* Scrollbar customization */
+    .scrollbar-none::-webkit-scrollbar {
+      display: none;
+    }
+    .scrollbar-none {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Accessibility Fallback for Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, #cursor-dot {
+        animation: none !important;
+        transition: none !important;
+        transform: none !important;
+      }
+      * { cursor: auto !important; }
+      #cursor-dot { display: none !important; }
+      .reveal-item { opacity: 1 !important; transform: none !important; }
+      .clip-reveal { clip-path: none !important; }
+      .service-explorer-container:hover .service-node { opacity: 1 !important; filter: none !important; transform: none !important; }
+    }
+
+    /* Disable Custom Cursor on Touch Devices */
+    @media (pointer: coarse) {
+      #cursor-dot { display: none !important; }
+      * { cursor: auto !important; }
+    }
+  </style>
+</head>
+<body class="min-h-screen selection:bg-day-accent selection:text-white dark:selection:bg-night-accent dark:selection:text-black">
+
+  <div id="cursor-dot"><span id="cursor-text"></span></div>
+
+  <header class="fixed top-0 left-0 w-full z-50 p-6 md:p-10 flex justify-between items-center mix-blend-difference">
+    <a href="index.html" class="font-mono text-xs font-bold tracking-widest text-white hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
+      MOINUDDIN.COM
+    </a>
+
+    <div class="hidden sm:flex items-center gap-2 px-3 py-1 border border-white/20 rounded-full text-[10px] font-mono tracking-widest uppercase text-white/80 backdrop-blur-md">
+      <span>SERVICES / 03</span>
+    </div>
+
+    <div class="flex items-center gap-4">
+      <button id="theme-toggle" aria-label="Toggle Theme" class="flex items-center gap-2 cursor-pointer border border-white/20 px-3 py-1.5 rounded-full backdrop-blur-md hover:border-white transition-all duration-300">
+        <span class="text-[10px] font-mono uppercase tracking-widest text-white">MODE</span>
+        <div class="w-2.5 h-2.5 rounded-full border border-white flex items-center justify-center p-0.5">
+          <div id="theme-dot" class="w-full h-full bg-white rounded-full transition-transform duration-300"></div>
+        </div>
+      </button>
+
+      <button id="menu-toggle" aria-label="Toggle Navigation Menu" class="flex items-center gap-2 cursor-pointer border border-white/20 px-4 py-1.5 rounded-full backdrop-blur-md hover:border-white transition-all duration-300">
+        <span id="menu-text" class="text-[10px] font-mono uppercase tracking-widest text-white">MENU</span>
+        <span class="w-2 h-2 rounded-full bg-day-accent dark:bg-night-accent"></span>
+      </button>
+    </div>
+  </header>
+
+  <div id="nav-overlay" class="fixed inset-0 z-40 bg-day-bg dark:bg-night-bg opacity-0 pointer-events-none transition-opacity duration-500 flex flex-col justify-between p-8 md:p-16">
+    <div class="flex justify-between items-center font-mono text-xs text-day-secondary dark:text-night-secondary">
+      <span>SPATIAL NAVIGATION</span>
+      <span>INDEX / 2026</span>
+    </div>
+
+    <nav aria-label="Overlay Navigation" class="my-auto">
+      <ul class="flex flex-col gap-4 md:gap-6 font-mono">
+        <li>
+          <a href="index.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
+            <span class="text-xs font-mono text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">01</span>
+            <span>HOME</span>
+          </a>
+        </li>
+        <li>
+          <a href="about.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
+            <span class="text-xs font-mono text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">02</span>
+            <span>ABOUT</span>
+          </a>
+        </li>
+        <li>
+          <a href="services.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-accent dark:text-night-accent cursor-open">
+            <span class="text-xs font-mono transition-colors">03</span>
+            <span>SERVICES</span>
+            <span class="text-xs font-mono border border-day-accent dark:border-night-accent px-2 py-0.5 rounded-full">CURRENT</span>
+          </a>
+        </li>
+        <li>
+          <a href="projects.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
+            <span class="text-xs font-mono text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">04</span>
+            <span>PROJECTS</span>
+          </a>
+        </li>
+        <li>
+          <a href="recommendations.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
+            <span class="text-xs font-mono text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">05</span>
+            <span>RECOMMENDATIONS</span>
+          </a>
+        </li>
+        <li>
+          <a href="contact.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
+            <span class="text-xs font-mono text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">06</span>
+            <span>CONTACT</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="border-t border-day-border dark:border-night-border pt-4 font-mono text-[10px] tracking-widest text-day-secondary dark:text-night-secondary uppercase flex justify-between">
+      <span>MOINUDDIN.COM</span>
+      <span>ALL RIGHTS RESERVED</span>
+    </div>
+  </div>
+
+  <main id="composition-wrapper" class="relative w-full min-h-screen viewport-canvas bg-grid-pattern pt-28 pb-16">
+
+    <div class="layer-bg fixed inset-0 pointer-events-none z-0 overflow-hidden">
+      <div class="absolute top-1/4 left-8 text-[10px] font-mono text-day-secondary/30 dark:text-night-secondary/20 parallax-elem" data-depth="0.04">+ SCENE_03 // SERVICES</div>
+      <div class="absolute top-2/3 right-12 text-[10px] font-mono text-day-secondary/30 dark:text-night-secondary/20 parallax-elem" data-depth="0.08">[CAPABILITIES_MATRIX: ACTIVE]</div>
+      <div class="absolute top-1/2 left-1/4 w-[1px] h-96 bg-day-border/30 dark:bg-night-border/20"></div>
+    </div>
+
+    <section class="relative z-10 min-h-[75vh] flex flex-col justify-center px-6 md:px-16 lg:px-24 mb-16">
+      <div class="max-w-7xl mx-auto w-full">
+        
+        <div class="inline-flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-day-accent dark:text-night-accent mb-6 reveal-item">
+          <span>SERVICES / 03</span>
+          <span class="w-8 h-[1px] bg-day-accent dark:bg-night-accent"></span>
+          <span class="text-day-secondary dark:text-night-secondary">WHAT I CAN BUILD FOR YOU</span>
+        </div>
+
+        <h1 class="font-bold tracking-tighter uppercase leading-[0.88] text-day-primary dark:text-night-primary select-none mb-8">
+          <span class="block text-6xl sm:text-8xl md:text-9xl font-black clip-reveal">
+            WHAT
+          </span>
+          <span class="block text-6xl sm:text-8xl md:text-9xl text-transparent [-webkit-text-stroke:1.5px_var(--primary)] pl-6 md:pl-16 clip-reveal">
+            I
+          </span>
+          <span class="block text-5xl sm:text-7xl md:text-8xl font-serif italic text-day-secondary dark:text-night-secondary -mt-2 md:-mt-4 clip-reveal">
+            BUILD<span class="text-day-accent dark:text-night-accent font-sans not-italic">.</span>
+          </span>
+        </h1>
+
+        <p class="text-lg md:text-2xl font-light text-day-secondary dark:text-night-secondary max-w-2xl leading-relaxed reveal-item border-l-2 border-day-accent dark:border-night-accent pl-6">
+          Digital experiences designed to look distinctive, work beautifully, and perform reliably.
+        </p>
+
+      </div>
+    </section>
+
+    <section class="relative z-10 py-20 px-6 md:px-16 lg:px-24 border-t border-day-border/60 dark:border-night-border/40">
+      
+      <div class="max-w-7xl mx-auto">
+        
+        <div class="flex justify-between items-end mb-12 reveal-item">
+          <div class="font-mono text-xs uppercase tracking-widest text-day-accent dark:text-night-accent">
+            <span>01 // SERVICE EXPLORER</span>
+          </div>
+          <div class="hidden sm:block font-mono text-[10px] uppercase tracking-widest text-day-secondary dark:text-night-secondary">
+            HOVER OR SELECT TO FOCUS ↓
+          </div>
+        </div>
+
+        <div class="service-explorer-container relative py-12 flex flex-col gap-12 sm:gap-16">
+          
+          <div class="service-node cursor-explore group flex flex-col sm:flex-row items-start sm:items-baseline gap-4 sm:gap-8 justify-start" data-service="01">
+            <span class="font-mono text-sm sm:text-xl font-bold text-day-accent dark:text-night-accent">01</span>
+            <div class="space-y-2">
+              <h2 class="text-4xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter text-day-primary dark:text-night-primary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">
+                WEB DESIGN
+              </h2>
+              <p class="service-desc-preview font-mono text-xs sm:text-sm text-day-secondary dark:text-night-secondary max-w-md hidden sm:block">
+                Clean, purposeful interfaces designed around strong visual hierarchy and user experience.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-node cursor-explore group flex flex-col sm:flex-row items-start sm:items-baseline gap-4 sm:gap-8 justify-start sm:justify-end sm:pr-12" data-service="02">
+            <span class="font-mono text-sm sm:text-xl font-bold text-day-accent dark:text-night-accent sm:order-2">02</span>
+            <div class="space-y-2 sm:text-right sm:order-1">
+              <h2 class="text-4xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter text-day-primary dark:text-night-primary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">
+                UI / UX DESIGN
+              </h2>
+              <p class="service-desc-preview font-mono text-xs sm:text-sm text-day-secondary dark:text-night-secondary max-w-md ml-auto hidden sm:block">
+                Thoughtful interface systems that make digital products easier and more intuitive to use.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-node cursor-explore group flex flex-col sm:flex-row items-start sm:items-baseline gap-4 sm:gap-8 justify-start sm:pl-16" data-service="03">
+            <span class="font-mono text-sm sm:text-xl font-bold text-day-accent dark:text-night-accent">03</span>
+            <div class="space-y-2">
+              <h2 class="text-4xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter text-transparent [-webkit-text-stroke:1.5px_var(--primary)] group-hover:text-day-primary dark:group-hover:text-night-primary transition-all duration-500">
+                FRONTEND
+              </h2>
+              <p class="service-desc-preview font-mono text-xs sm:text-sm text-day-secondary dark:text-night-secondary max-w-md hidden sm:block">
+                Responsive, polished frontend experiences built with clean and maintainable code.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-node cursor-explore group flex flex-col sm:flex-row items-start sm:items-baseline gap-4 sm:gap-8 justify-start sm:justify-center" data-service="04">
+            <span class="font-mono text-sm sm:text-xl font-bold text-day-accent dark:text-night-accent">04</span>
+            <div class="space-y-2">
+              <h2 class="text-4xl sm:text-6xl md:text-7xl font-bold uppercase tracking-tighter text-day-primary dark:text-night-primary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">
+                WORDPRESS DEVELOPMENT
+              </h2>
+              <p class="service-desc-preview font-mono text-xs sm:text-sm text-day-secondary dark:text-night-secondary max-w-md hidden sm:block">
+                Custom WordPress websites built for flexibility, performance, and easy content management.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-node cursor-explore group flex flex-col sm:flex-row items-start sm:items-baseline gap-4 sm:gap-8 justify-start sm:justify-end" data-service="05">
+            <span class="font-mono text-sm sm:text-xl font-bold text-day-accent dark:text-night-accent sm:order-2">05</span>
+            <div class="space-y-2 sm:text-right sm:order-1">
+              <h2 class="text-3xl sm:text-6xl md:text-7xl font-serif italic text-day-secondary dark:text-night-secondary group-hover:text-day-primary dark:group-hover:text-night-primary transition-colors">
+                RESPONSIVE DESIGN
+              </h2>
+              <p class="service-desc-preview font-mono text-xs sm:text-sm text-day-secondary dark:text-night-secondary max-w-md ml-auto hidden sm:block">
+                Interfaces that adapt naturally across desktop, tablet, and mobile.
+              </p>
+            </div>
+          </div>
+
+          <div class="service-node cursor-explore group flex flex-col sm:flex-row items-start sm:items-baseline gap-4 sm:gap-8 justify-start" data-service="06">
+            <span class="font-mono text-sm sm:text-xl font-bold text-day-accent dark:text-night-accent">06</span>
+            <div class="space-y-2">
+              <h2 class="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter text-day-primary dark:text-night-primary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">
+                SEO &amp; PERFORMANCE
+              </h2>
+              <p class="service-desc-preview font-mono text-xs sm:text-sm text-day-secondary dark:text-night-secondary max-w-md hidden sm:block">
+                Technical improvements that help websites become faster, more accessible, and easier to discover.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section id="service-focus-section" class="relative z-10 py-24 px-6 md:px-16 lg:px-24 bg-day-surface/40 dark:bg-night-surface/20 border-y border-day-border/60 dark:border-night-border/40">
+      
+      <div class="max-w-6xl mx-auto">
+        
+        <div class="font-mono text-xs uppercase tracking-widest text-day-accent dark:text-night-accent mb-8 reveal-item">
+          <span>02 // CAPABILITY BREAKDOWN</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+          
+          <div class="lg:col-span-4 space-y-6 reveal-item">
+            <div id="detail-number" class="font-mono text-6xl font-bold text-day-accent dark:text-night-accent">
+              01
+            </div>
+            
+            <div class="font-mono text-xs uppercase tracking-widest text-day-secondary dark:text-night-secondary border-t border-day-border dark:border-night-border pt-4">
+              ACTIVE SELECTION
+            </div>
+
+            <div class="flex flex-wrap gap-2 pt-2">
+              <button class="selector-btn px-3 py-1 font-mono text-xs border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface text-day-primary dark:text-night-primary hover:border-day-accent dark:hover:border-night-accent" data-target="01">01</button>
+              <button class="selector-btn px-3 py-1 font-mono text-xs border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface text-day-primary dark:text-night-primary hover:border-day-accent dark:hover:border-night-accent" data-target="02">02</button>
+              <button class="selector-btn px-3 py-1 font-mono text-xs border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface text-day-primary dark:text-night-primary hover:border-day-accent dark:hover:border-night-accent" data-target="03">03</button>
+              <button class="selector-btn px-3 py-1 font-mono text-xs border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface text-day-primary dark:text-night-primary hover:border-day-accent dark:hover:border-night-accent" data-target="04">04</button>
+              <button class="selector-btn px-3 py-1 font-mono text-xs border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface text-day-primary dark:text-night-primary hover:border-day-accent dark:hover:border-night-accent" data-target="05">05</button>
+              <button class="selector-btn px-3 py-1 font-mono text-xs border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface text-day-primary dark:text-night-primary hover:border-day-accent dark:hover:border-night-accent" data-target="06">06</button>
+            </div>
+          </div>
+
+          <div class="lg:col-span-8 space-y-8 reveal-item">
+            
+            <h3 id="detail-title" class="text-3xl sm:text-5xl font-black uppercase tracking-tight text-day-primary dark:text-night-primary">
+              WEB DESIGN
+            </h3>
+
+            <p id="detail-desc" class="text-lg md:text-xl font-light text-day-secondary dark:text-night-secondary leading-relaxed border-l-2 border-day-accent dark:border-night-accent pl-6">
+              Clean, purposeful interfaces designed around strong visual hierarchy and user experience.
+            </p>
+
+            <div class="pt-6">
+              <div class="font-mono text-xs uppercase tracking-widest text-day-secondary dark:text-night-secondary mb-4">
+                KEY OUTPUTS &amp; DELIVERABLES:
+              </div>
+
+              <div id="detail-outputs" class="flex flex-wrap gap-3">
+                <span class="output-pill px-4 py-2 border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface font-mono text-xs uppercase tracking-wider text-day-primary dark:text-night-primary">Strategy</span>
+                <span class="output-pill px-4 py-2 border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface font-mono text-xs uppercase tracking-wider text-day-primary dark:text-night-primary">Visual Direction</span>
+                <span class="output-pill px-4 py-2 border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface font-mono text-xs uppercase tracking-wider text-day-primary dark:text-night-primary">Interface Design</span>
+                <span class="output-pill px-4 py-2 border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface font-mono text-xs uppercase tracking-wider text-day-primary dark:text-night-primary">Responsive Layout</span>
+                <span class="output-pill px-4 py-2 border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface font-mono text-xs uppercase tracking-wider text-day-primary dark:text-night-primary">Interaction Design</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="relative z-10 py-32 px-6 md:px-16 lg:px-24">
+      <div class="max-w-7xl mx-auto">
+        
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-16 gap-4 reveal-item">
+          <div>
+            <div class="font-mono text-xs uppercase tracking-widest text-day-accent dark:text-night-accent mb-2">
+              <span>03 // WORKFLOW</span>
+            </div>
+            <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-tight text-day-primary dark:text-night-primary">
+              HOW I WORK
+            </h2>
+          </div>
+          <div class="font-mono text-xs text-day-secondary dark:text-night-secondary">
+            STRUCTURED CREATIVE PROCESS
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6">
+          
+          <div class="workflow-step p-6 border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface flex flex-col justify-between h-56 reveal-item">
+            <div class="font-mono text-3xl font-bold text-day-accent dark:text-night-accent">01</div>
+            <div>
+              <h3 class="font-bold text-lg uppercase tracking-wider text-day-primary dark:text-night-primary mb-1">DISCOVER</h3>
+              <p class="font-mono text-[11px] text-day-secondary dark:text-night-secondary leading-relaxed">Understanding project goals, audience context, and design constraints.</p>
+            </div>
+          </div>
+
+          <div class="workflow-step p-6 border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface flex flex-col justify-between h-56 reveal-item">
+            <div class="font-mono text-3xl font-bold text-day-accent dark:text-night-accent">02</div>
+            <div>
+              <h3 class="font-bold text-lg uppercase tracking-wider text-day-primary dark:text-night-primary mb-1">DEFINE</h3>
+              <p class="font-mono text-[11px] text-day-secondary dark:text-night-secondary leading-relaxed">Structuring site map, layout direction, typography, and visual rules.</p>
+            </div>
+          </div>
+
+          <div class="workflow-step p-6 border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface flex flex-col justify-between h-56 reveal-item">
+            <div class="font-mono text-3xl font-bold text-day-accent dark:text-night-accent">03</div>
+            <div>
+              <h3 class="font-bold text-lg uppercase tracking-wider text-day-primary dark:text-night-primary mb-1">DESIGN</h3>
+              <p class="font-mono text-[11px] text-day-secondary dark:text-night-secondary leading-relaxed">Crafting high-end, responsive interfaces with meticulous visual hierarchy.</p>
+            </div>
+          </div>
+
+          <div class="workflow-step p-6 border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface flex flex-col justify-between h-56 reveal-item">
+            <div class="font-mono text-3xl font-bold text-day-accent dark:text-night-accent">04</div>
+            <div>
+              <h3 class="font-bold text-lg uppercase tracking-wider text-day-primary dark:text-night-primary mb-1">BUILD</h3>
+              <p class="font-mono text-[11px] text-day-secondary dark:text-night-secondary leading-relaxed">Translating designs into clean, fast, and accessible frontend code.</p>
+            </div>
+          </div>
+
+          <div class="workflow-step p-6 border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface flex flex-col justify-between h-56 reveal-item">
+            <div class="font-mono text-3xl font-bold text-day-accent dark:text-night-accent">05</div>
+            <div>
+              <h3 class="font-bold text-lg uppercase tracking-wider text-day-primary dark:text-night-primary mb-1">REFINE</h3>
+              <p class="font-mono text-[11px] text-day-secondary dark:text-night-secondary leading-relaxed">Testing interactions, responsive breakpoints, motion smoothness, and speed.</p>
+            </div>
+          </div>
+
+          <div class="workflow-step p-6 border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface flex flex-col justify-between h-56 reveal-item">
+            <div class="font-mono text-3xl font-bold text-day-accent dark:text-night-accent">06</div>
+            <div>
+              <h3 class="font-bold text-lg uppercase tracking-wider text-day-primary dark:text-night-primary mb-1">LAUNCH</h3>
+              <p class="font-mono text-[11px] text-day-secondary dark:text-night-secondary leading-relaxed">Final optimization, SEO validation, cross-browser check, and deployment.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="relative z-10 py-32 px-6 md:px-16 lg:px-24 bg-day-surface/30 dark:bg-night-surface/10 border-t border-day-border/60 dark:border-night-border/40">
+      <div class="max-w-5xl mx-auto text-center space-y-8">
+        
+        <div class="font-mono text-xs uppercase tracking-widest text-day-accent dark:text-night-accent reveal-item">
+          <span>04 // CORE PRINCIPLE</span>
+        </div>
+
+        <blockquote class="text-4xl sm:text-6xl md:text-7xl font-bold uppercase tracking-tighter text-day-primary dark:text-night-primary leading-tight reveal-item">
+          DESIGN ISN'T JUST HOW IT LOOKS.
+        </blockquote>
+
+        <blockquote class="text-3xl sm:text-5xl md:text-6xl font-serif italic text-day-accent dark:text-night-accent leading-tight reveal-item">
+          IT'S HOW IT WORKS.
+        </blockquote>
+
+        <p class="text-base sm:text-xl font-light text-day-secondary dark:text-night-secondary max-w-2xl mx-auto leading-relaxed reveal-item pt-4">
+          Every decision should improve clarity, usability, performance, or the overall experience.
+        </p>
+
+      </div>
+    </section>
+
+    <section class="relative z-10 py-32 px-6 md:px-16 lg:px-24 border-t border-day-border/60 dark:border-night-border/40">
+      <div class="max-w-6xl mx-auto">
+        
+        <div class="font-mono text-xs uppercase tracking-widest text-day-accent dark:text-night-accent mb-12 reveal-item">
+          <span>05 // DELIVERABLES</span>
+        </div>
+
+        <h2 class="text-3xl sm:text-5xl font-bold uppercase tracking-tight text-day-primary dark:text-night-primary mb-16 reveal-item">
+          WHAT YOU GET
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 font-mono text-lg sm:text-2xl uppercase tracking-wider">
+          
+          <div class="p-6 border-b border-day-border dark:border-night-border flex items-center justify-between group hover:border-day-accent dark:hover:border-night-accent transition-colors reveal-item">
+            <span class="group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">STRATEGIC THINKING</span>
+            <span class="text-xs text-day-secondary dark:text-night-secondary">[01]</span>
+          </div>
+
+          <div class="p-6 border-b border-day-border dark:border-night-border flex items-center justify-between group hover:border-day-accent dark:hover:border-night-accent transition-colors reveal-item">
+            <span class="group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">CLEAR VISUAL DIRECTION</span>
+            <span class="text-xs text-day-secondary dark:text-night-secondary">[02]</span>
+          </div>
+
+          <div class="p-6 border-b border-day-border dark:border-night-border flex items-center justify-between group hover:border-day-accent dark:hover:border-night-accent transition-colors reveal-item">
+            <span class="group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">RESPONSIVE INTERFACE</span>
+            <span class="text-xs text-day-secondary dark:text-night-secondary">[03]</span>
+          </div>
+
+          <div class="p-6 border-b border-day-border dark:border-night-border flex items-center justify-between group hover:border-day-accent dark:hover:border-night-accent transition-colors reveal-item">
+            <span class="group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">CLEAN DEVELOPMENT</span>
+            <span class="text-xs text-day-secondary dark:text-night-secondary">[04]</span>
+          </div>
+
+          <div class="p-6 border-b border-day-border dark:border-night-border flex items-center justify-between group hover:border-day-accent dark:hover:border-night-accent transition-colors reveal-item">
+            <span class="group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">PERFORMANCE FOCUS</span>
+            <span class="text-xs text-day-secondary dark:text-night-secondary">[05]</span>
+          </div>
+
+          <div class="p-6 border-b border-day-border dark:border-night-border flex items-center justify-between group hover:border-day-accent dark:hover:border-night-accent transition-colors reveal-item">
+            <span class="group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">SEO FOUNDATION</span>
+            <span class="text-xs text-day-secondary dark:text-night-secondary">[06]</span>
+          </div>
+
+          <div class="p-6 border-b border-day-border dark:border-night-border flex items-center justify-between group hover:border-day-accent dark:hover:border-night-accent transition-colors reveal-item md:col-span-2">
+            <span class="group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">MAINTAINABLE STRUCTURE</span>
+            <span class="text-xs text-day-secondary dark:text-night-secondary">[07]</span>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <section class="relative z-10 py-32 px-6 md:px-16 lg:px-24 border-t-2 border-day-primary dark:border-night-primary bg-day-surface dark:bg-night-surface">
+      <div class="max-w-5xl mx-auto text-center space-y-8">
+        
+        <div class="font-mono text-xs uppercase tracking-widest text-day-accent dark:text-night-accent reveal-item">
+          <span>HAVE A PROJECT IN MIND?</span>
+        </div>
+
+        <h2 class="text-4xl sm:text-7xl font-bold uppercase tracking-tighter text-day-primary dark:text-night-primary leading-none reveal-item">
+          LET'S BUILD SOMETHING USEFUL.
+        </h2>
+
+        <div class="flex flex-wrap justify-center gap-6 pt-6 reveal-item">
+          <a href="contact.html" class="px-8 py-4 bg-day-primary dark:bg-night-primary text-day-bg dark:text-night-bg font-mono text-xs uppercase tracking-widest hover:bg-day-accent dark:hover:bg-night-accent hover:text-white transition-colors duration-300 cursor-open">
+            START A PROJECT
+          </a>
+          <a href="projects.html" class="px-8 py-4 border border-day-border dark:border-night-border font-mono text-xs uppercase tracking-widest text-day-primary dark:text-night-primary hover:border-day-accent dark:hover:border-night-accent transition-colors duration-300 cursor-open">
+            VIEW MY WORK
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <div id="page-transition" class="fixed inset-0 z-[90] bg-day-primary dark:bg-night-primary translate-y-full transition-transform duration-500 pointer-events-none"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      /* -------------------------------------------------------------
+         1. SERVICE DATA DICTIONARY FOR DETAIL FOCUS
+      ------------------------------------------------------------- */
+      const servicesData = {
+        '01': {
+          number: '01',
+          title: 'WEB DESIGN',
+          description: 'Clean, purposeful interfaces designed around strong visual hierarchy and user experience.',
+          outputs: ['Strategy', 'Visual Direction', 'Interface Design', 'Responsive Layout', 'Interaction Design']
+        },
+        '02': {
+          number: '02',
+          title: 'UI / UX DESIGN',
+          description: 'Thoughtful interface systems that make digital products easier and more intuitive to use.',
+          outputs: ['User Flow Mapping', 'Wireframing', 'Design Systems', 'Component Libraries', 'Usability Optimization']
+        },
+        '03': {
+          number: '03',
+          title: 'FRONTEND DEVELOPMENT',
+          description: 'Responsive, polished frontend experiences built with clean and maintainable code.',
+          outputs: ['HTML5 / Tailwind CSS', 'Vanilla JavaScript', 'CSS Motion & Depth', 'Responsive Adaptation', 'Clean Code Architecture']
+        },
+        '04': {
+          number: '04',
+          title: 'WORDPRESS DEVELOPMENT',
+          description: 'Custom WordPress websites built for flexibility, performance, and easy content management.',
+          outputs: ['Custom Theme Build', 'Gutenberg Integration', 'Content Architecture', 'Plugin Optimization', 'Client Handover Training']
+        },
+        '05': {
+          number: '05',
+          title: 'RESPONSIVE DESIGN',
+          description: 'Interfaces that adapt naturally across desktop, tablet, and mobile.',
+          outputs: ['Mobile-First Strategy', 'Fluid Typography', 'Touch-Friendly UI', 'Breakpoint Optimization', 'Cross-Device Testing']
+        },
+        '06': {
+          number: '06',
+          title: 'SEO & PERFORMANCE',
+          description: 'Technical improvements that help websites become faster, more accessible, and easier to discover.',
+          outputs: ['Core Web Vitals', 'Semantic HTML5', 'Speed Optimization', 'Search Engine Metadata', 'Accessibility Compliance']
+        }
+      };
+
+      /* -------------------------------------------------------------
+         2. DAY / NIGHT THEME SYSTEM
+      ------------------------------------------------------------- */
+      const themeToggleBtn = document.getElementById('theme-toggle');
+      const htmlElement = document.documentElement;
+
+      const savedTheme = localStorage.getItem('theme') || 'dark';
+      if (savedTheme === 'dark') {
+        htmlElement.classList.add('dark');
+      } else {
+        htmlElement.classList.remove('dark');
+      }
+
+      themeToggleBtn.addEventListener('click', () => {
+        if (htmlElement.classList.contains('dark')) {
+          htmlElement.classList.remove('dark');
+          localStorage.setItem('theme', 'light');
+        } else {
+          htmlElement.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+
+      /* -------------------------------------------------------------
+         3. OVERLAY MENU TOGGLE
+      ------------------------------------------------------------- */
+      const menuToggleBtn = document.getElementById('menu-toggle');
+      const menuText = document.getElementById('menu-text');
+      const navOverlay = document.getElementById('nav-overlay');
+      let isMenuOpen = false;
+
+      menuToggleBtn.addEventListener('click', () => {
+        isMenuOpen = !isMenuOpen;
+        if (isMenuOpen) {
+          navOverlay.classList.remove('opacity-0', 'pointer-events-none');
+          menuText.textContent = 'CLOSE';
+        } else {
+          navOverlay.classList.add('opacity-0', 'pointer-events-none');
+          menuText.textContent = 'MENU';
+        }
+      });
+
+      /* -------------------------------------------------------------
+         4. CUSTOM CURSOR
+      ------------------------------------------------------------- */
+      const cursorDot = document.getElementById('cursor-dot');
+      const cursorText = document.getElementById('cursor-text');
+      
+      let mouseX = 0, mouseY = 0;
+      let cursorX = 0, cursorY = 0;
+
+      window.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      function renderCursor() {
+        cursorX += (mouseX - cursorX) * 0.2;
+        cursorY += (mouseY - cursorY) * 0.2;
+
+        cursorDot.style.left = `${cursorX}px`;
+        cursorDot.style.top = `${cursorY}px`;
+
+        requestAnimationFrame(renderCursor);
+      }
+      requestAnimationFrame(renderCursor);
+
+      const openTriggers = document.querySelectorAll('.cursor-open, a, button');
+      openTriggers.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+          cursorDot.classList.add('expand');
+          cursorText.textContent = 'OPEN';
+        });
+        element.addEventListener('mouseleave', () => {
+          cursorDot.classList.remove('expand');
+          cursorText.textContent = '';
+        });
+      });
+
+      const exploreTriggers = document.querySelectorAll('.cursor-explore');
+      exploreTriggers.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+          cursorDot.classList.add('expand');
+          cursorText.textContent = 'EXPLORE';
+        });
+        element.addEventListener('mouseleave', () => {
+          cursorDot.classList.remove('expand');
+          cursorText.textContent = '';
+        });
+      });
+
+      /* -------------------------------------------------------------
+         5. SERVICE SELECTION & DYNAMIC FOCUS UPDATE
+      ------------------------------------------------------------- */
+      const detailNumber = document.getElementById('detail-number');
+      const detailTitle = document.getElementById('detail-title');
+      const detailDesc = document.getElementById('detail-desc');
+      const detailOutputs = document.getElementById('detail-outputs');
+      const selectorBtns = document.querySelectorAll('.selector-btn');
+      const serviceNodes = document.querySelectorAll('.service-node');
+
+      function updateServiceFocus(key) {
+        const data = servicesData[key];
+        if (!data) return;
+
+        // Update Text
+        detailNumber.textContent = data.number;
+        detailTitle.textContent = data.title;
+        detailDesc.textContent = data.description;
+
+        // Update Outputs
+        detailOutputs.innerHTML = '';
+        data.outputs.forEach(output => {
+          const pill = document.createElement('span');
+          pill.className = 'output-pill px-4 py-2 border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface font-mono text-xs uppercase tracking-wider text-day-primary dark:text-night-primary';
+          pill.textContent = output;
+          detailOutputs.appendChild(pill);
+        });
+
+        // Update Selector Button Active States
+        selectorBtns.forEach(btn => {
+          if (btn.getAttribute('data-target') === key) {
+            btn.classList.add('border-day-accent', 'dark:border-night-accent', 'text-day-accent', 'dark:text-night-accent');
+          } else {
+            btn.classList.remove('border-day-accent', 'dark:border-night-accent', 'text-day-accent', 'dark:text-night-accent');
+          }
+        });
+
+        // Update Explorer Grid Active Highlight
+        serviceNodes.forEach(node => {
+          if (node.getAttribute('data-service') === key) {
+            node.classList.add('active-focus');
+          } else {
+            node.classList.remove('active-focus');
+          }
+        });
+      }
+
+      // Event Listeners for Grid Hover & Click
+      serviceNodes.forEach(node => {
+        node.addEventListener('mouseenter', () => {
+          const key = node.getAttribute('data-service');
+          updateServiceFocus(key);
+        });
+
+        node.addEventListener('click', () => {
+          const key = node.getAttribute('data-service');
+          updateServiceFocus(key);
+          document.getElementById('service-focus-section').scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+
+      // Event Listeners for Selector Buttons
+      selectorBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const key = btn.getAttribute('data-target');
+          updateServiceFocus(key);
+        });
+      });
+
+      // Initialize default
+      updateServiceFocus('01');
+
+      /* -------------------------------------------------------------
+         6. SCROLL REVEAL (INTERSECTION OBSERVER)
+      ------------------------------------------------------------- */
+      const revealItems = document.querySelectorAll('.reveal-item, .clip-reveal');
+      
+      const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.12
+      };
+
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+          }
+        });
+      }, observerOptions);
+
+      revealItems.forEach(item => revealObserver.observe(item));
+
+      /* -------------------------------------------------------------
+         7. SPATIAL MOUSE PARALLAX
+      ------------------------------------------------------------- */
+      const parallaxElems = document.querySelectorAll('.parallax-elem');
+      let targetX = 0, targetY = 0;
+      let currentX = 0, currentY = 0;
+
+      const windowHalfX = window.innerWidth / 2;
+      const windowHalfY = window.innerHeight / 2;
+
+      window.addEventListener('mousemove', (e) => {
+        targetX = (e.clientX - windowHalfX) / windowHalfX;
+        targetY = (e.clientY - windowHalfY) / windowHalfY;
+      });
+
+      function animateParallax() {
+        currentX += (targetX - currentX) * 0.05;
+        currentY += (targetY - currentY) * 0.05;
+
+        parallaxElems.forEach(elem => {
+          const depth = parseFloat(elem.getAttribute('data-depth')) || 0.04;
+          const moveX = currentX * (depth * 250);
+          const moveY = currentY * (depth * 250);
+          elem.style.transform = `translate3d(${moveX}px, ${moveY}px, 0px)`;
+        });
+
+        requestAnimationFrame(animateParallax);
+      }
+
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (window.innerWidth > 768 && !prefersReducedMotion) {
+        requestAnimationFrame(animateParallax);
+      }
+
+      /* -------------------------------------------------------------
+         8. PAGE LEAVE CINEMATIC TRANSITION
+      ------------------------------------------------------------- */
+      const transitionOverlay = document.getElementById('page-transition');
+      const navLinks = document.querySelectorAll('a[href$=".html"]');
+
+      navLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+          const targetUrl = link.getAttribute('href');
+          
+          if (targetUrl && !targetUrl.startsWith('#') && !targetUrl.startsWith('http')) {
+            e.preventDefault();
+            transitionOverlay.classList.remove('translate-y-full');
+            
+            setTimeout(() => {
+              window.location.href = targetUrl;
+            }, 500);
+          }
+        });
+      });
+
+    });
+  </script>
+</body>
+</html>
