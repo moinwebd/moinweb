@@ -1,8 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>MoinWeb — Blog | Web Design, SEO & Small Business Tips</title>
+  <meta name="description" content="Explore MOINWEB insights on web design, website costs, SEO, user experience, and practical tips to grow your small business online.">
+  <link rel="canonical" href="https://moinweb.info/blog.html">
+  
     <title>About Moinuddin | Web Designer &amp; Developer | MoinWeb</title>
   <meta name="description" content="Moinuddin is a web designer and developer building fast, SEO-friendly WordPress and custom websites for small businesses. See the process.">
   <meta name="robots" content="index, follow, max-image-preview:large">
@@ -11,7 +16,11 @@
 
   <!-- Open Graph -->
   <meta property="og:site_name" content="MoinWeb">
-  <meta property="og:type" content="website">
+<meta property="og:type" content="website">
+  <meta property="og:url" content="https://moinweb.info/blog.html">
+  <meta property="og:title" content="MoinWeb — Blog | Web Design, SEO & Small Business Tips">
+  <meta property="og:description" content="Explore MOINWEB insights on web design, website costs, SEO, user experience, and practical tips to grow your small business online.">
+  <meta property="og:image" content="/assets/blogs/blog.webp">
   <meta property="og:url" content="https://moinweb.info/about.html">
   <meta property="og:title" content="About Moinuddin | Web Designer &amp; Developer | MoinWeb">
   <meta property="og:description" content="Moinuddin is a web designer and developer building fast, SEO-friendly WordPress and custom websites for small businesses. See the process.">
@@ -56,164 +65,22 @@
   }
   </script>
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            day: {
-              bg: '#F4F5F7',
-              primary: '#0B0D10',
-              secondary: '#667085',
-              surface: '#FFFFFF',
-              accent: '#FF5C35',
-              border: '#D9DDE3'
-            },
-            night: {
-              bg: '#08090C',
-              primary: '#F5F7FA',
-              secondary: '#98A2B3',
-              surface: '#111318',
-              accent: '#FF6B45',
-              border: '#242832'
-            }
-          },
-          fontFamily: {
-            sans: ['Space Grotesk', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-            serif: ['Cinzel', 'Playfair Display', 'Georgia', 'serif'],
-            mono: ['JetBrains Mono', 'Courier New', 'monospace']
-          }
-        }
-      }
-    }
-  </script>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <style>
-    /* CSS Variables & Theme Foundations */
-    :root {
-      --bg: #F4F5F7;
-      --primary: #0B0D10;
-      --secondary: #667085;
-      --accent: #FF5C35;
-      --surface: #FFFFFF;
-      --border: #D9DDE3;
-      --grid: rgba(11, 13, 16, 0.04);
-    }
-
-    .dark {
-      --bg: #08090C;
-      --primary: #F5F7FA;
-      --secondary: #98A2B3;
-      --accent: #FF6B45;
-      --surface: #111318;
-      --border: #242832;
-      --grid: rgba(245, 247, 250, 0.03);
-    }
-
-    * {
-      box-sizing: border-box;
-      cursor: none;
-    }
-
-    body {
-      background-color: var(--bg);
-      color: var(--primary);
-      transition: background-color 0.6s cubic-bezier(0.16, 1, 0.3, 1), color 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-      overflow-x: hidden;
-      font-family: 'Space Grotesk', sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* Spatial Canvas Baseline */
-    .viewport-canvas {
-      perspective: 1200px;
-      transform-style: preserve-3d;
-    }
-
-    .layer-bg { transform: translateZ(-60px) scale(1.05); }
+.layer-bg { transform: translateZ(-60px) scale(1.05); }
     .layer-mid { transform: translateZ(0px); }
     .layer-fore { transform: translateZ(40px); }
 
-    /* Fine Grid Overlay */
-    .bg-grid-pattern {
-      background-image: 
-        linear-gradient(to right, var(--grid) 1px, transparent 1px),
-        linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
-      background-size: 80px 80px;
-      background-attachment: fixed;
-    }
+/* Fine Grid Overlay */
+.bg-grid-pattern {
+clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
 
-    /* Custom Cursor */
-    #cursor-dot {
-      pointer-events: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 9999;
-      width: 12px;
-      height: 12px;
-      background-color: var(--accent);
-      border-radius: 50%;
-      transform: translate(-50%, -50%);
-      transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
-                  height 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
-                  background-color 0.3s ease, 
-                  border-radius 0.3s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      mix-blend-mode: difference;
-    }
-
-    #cursor-dot span {
-      opacity: 0;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 8px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      color: #000;
-      transition: opacity 0.2s ease;
-    }
-
-    #cursor-dot.expand {
-      width: 64px;
-      height: 64px;
-      background-color: #FFFFFF;
-      mix-blend-mode: normal;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-    }
-
-    #cursor-dot.expand span {
-      opacity: 1;
-    }
-
-    /* Scroll Reveal & Animations */
-    .reveal-item {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: opacity, transform;
-    }
-    .reveal-item.revealed {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .clip-reveal {
-      clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
-      transition: clip-path 1.2s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: clip-path;
-    }
-    .clip-reveal.revealed {
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-
+    /* Blog Card Interaction */
+    .blog-card {
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
     /* Portrait Framing Depth */
     .portrait-frame {
       transform-style: preserve-3d;
@@ -230,11 +97,13 @@
       position: relative;
       transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
       transform-style: preserve-3d;
-    }
+}
+    .blog-card:hover {
+      transform: translateY(-6px);
 
     .social-item:hover {
       transform: translateY(-4px) scale(1.08) translateZ(10px);
-      border-color: var(--accent);
+border-color: var(--accent);
       color: var(--accent);
     }
 
@@ -247,8 +116,13 @@
       pointer-events: none;
       white-space: nowrap;
       transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    }
+}
 
+    /* Category Filter Tab Active State */
+    .category-btn.active {
+      background-color: var(--primary);
+      color: var(--bg);
+      border-color: var(--primary);
     .social-item:hover .social-label {
       opacity: 1;
       transform: translateX(-50%) translateY(0);
@@ -261,7 +135,11 @@
     .floating-cap:hover {
       color: var(--accent);
       transform: translateZ(30px) scale(1.05);
-    }
+}
+    .dark .category-btn.active {
+      background-color: var(--primary);
+      color: var(--bg);
+      border-color: var(--primary);
 
     /* Horizontal Approach Cinematic Sequence */
     .approach-card {
@@ -270,141 +148,110 @@
     }
     .approach-card:hover {
       border-left-color: var(--accent);
-    }
+}
 
-    /* 3D Spatial Rings & Crosshairs */
-    .floating-ring {
-      width: 220px;
-      height: 220px;
-      border: 1px solid var(--border);
-      border-radius: 50%;
-      position: absolute;
-      pointer-events: none;
-      transform-style: preserve-3d;
-      transition: transform 0.1s ease-out;
-    }
+/* 3D Spatial Rings & Crosshairs */
 
-    .floating-crosshair {
-      position: absolute;
-      pointer-events: none;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 10px;
-      color: var(--secondary);
-      opacity: 0.4;
-    }
+opacity: 0.4;
+}
 
     /* Accessibility / Motion Fallback */
-    @media (prefers-reduced-motion: reduce) {
-      *, #cursor-dot {
-        animation: none !important;
-        transition: none !important;
-        transform: none !important;
-      }
-      * { cursor: auto !important; }
-      #cursor-dot { display: none !important; }
-      .reveal-item { opacity: 1 !important; transform: none !important; }
-      .clip-reveal { clip-path: none !important; }
-    }
+@media (prefers-reduced-motion: reduce) {
+*, #cursor-dot {
+animation: none !important;
 
-    @media (pointer: coarse) {
-      #cursor-dot { display: none !important; }
-      * { cursor: auto !important; }
-    }
-  </style>
-</head>
-<body class="min-h-screen selection:bg-day-accent selection:text-white dark:selection:bg-night-accent dark:selection:text-black">
+<div id="cursor-dot"><span id="cursor-text"></span></div>
 
-  <div id="cursor-dot"><span id="cursor-text"></span></div>
-
-  <header class="fixed top-0 left-0 w-full z-50 p-6 md:p-10 flex justify-between items-center mix-blend-difference">
+<header class="fixed top-0 left-0 w-full z-50 p-6 md:p-10 flex justify-between items-center mix-blend-difference">
+    <a href="/index.html" class="font-mono text-xs font-bold tracking-widest text-white hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
     <a href="index.html" class="font-mono text-xs font-bold tracking-widest text-white hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
-      MOINWEB
-    </a>
+MOINWEB
+</a>
 
-    <div class="hidden sm:flex items-center gap-2 px-3 py-1 border border-white/20 rounded-full text-[10px] font-mono tracking-widest uppercase text-white/80 backdrop-blur-md">
+<div class="hidden sm:flex items-center gap-2 px-3 py-1 border border-white/20 rounded-full text-[10px] font-mono tracking-widest uppercase text-white/80 backdrop-blur-md">
+      <span>BLOG / 05</span>
       <span>ABOUT / 02</span>
-    </div>
+</div>
 
-    <div class="flex items-center gap-4">
-      <button id="theme-toggle" aria-label="Toggle Theme" class="flex items-center gap-2 cursor-pointer border border-white/20 px-3 py-1.5 rounded-full backdrop-blur-md hover:border-white transition-all duration-300">
-        <span class="text-[10px] font-mono uppercase tracking-widest text-white">MODE</span>
-        <div class="w-2.5 h-2.5 rounded-full border border-white flex items-center justify-center p-0.5">
-          <div id="theme-dot" class="w-full h-full bg-white rounded-full transition-transform duration-300"></div>
-        </div>
-      </button>
+<div class="flex items-center gap-4">
 
-      <button id="menu-toggle" aria-label="Toggle Navigation Menu" class="flex items-center gap-2 cursor-pointer border border-white/20 px-4 py-1.5 rounded-full backdrop-blur-md hover:border-white transition-all duration-300">
-        <span id="menu-text" class="text-[10px] font-mono uppercase tracking-widest text-white">MENU</span>
-        <span class="w-2 h-2 rounded-full bg-day-accent dark:bg-night-accent"></span>
-      </button>
-    </div>
-  </header>
-
-  <div id="nav-overlay" class="fixed inset-0 z-40 bg-day-bg dark:bg-night-bg opacity-0 pointer-events-none transition-opacity duration-500 flex flex-col justify-between p-8 md:p-16">
-    <div class="flex justify-between items-center font-mono text-xs text-day-secondary dark:text-night-secondary">
-      <span>SPATIAL NAVIGATION</span>
-      <span>INDEX / 2026</span>
-    </div>
-
-    <nav aria-label="Overlay Navigation" class="my-auto">
-      <ul class="flex flex-col gap-4 md:gap-6 font-mono">
-        <li>
+<nav aria-label="Overlay Navigation" class="my-auto">
+<ul class="flex flex-col gap-4 md:gap-6 font-mono">
+<li>
+          <a href="/index.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
           <a href="index.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
-            <span class="text-xs font-mono text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">01</span>
-            <span>HOME</span>
-          </a>
-        </li>
-        <li>
+<span class="text-xs font-mono text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">01</span>
+<span>HOME</span>
+</a>
+</li>
+<li>
+          <a href="/about.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
+            <span class="text-xs font-mono text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">02</span>
           <a href="about.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-accent dark:text-night-accent cursor-open">
             <span class="text-xs font-mono transition-colors">02</span>
-            <span>ABOUT</span>
+<span>ABOUT</span>
             <span class="text-xs font-mono border border-day-accent dark:border-night-accent px-2 py-0.5 rounded-full">CURRENT</span>
-          </a>
-        </li>
-        <li>
+</a>
+</li>
+<li>
+          <a href="/services.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
           <a href="services.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
-            <span class="text-xs font-mono text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">03</span>
-            <span>SERVICES</span>
-          </a>
-        </li>
-        <li>
+<span class="text-xs font-mono text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">03</span>
+<span>SERVICES</span>
+</a>
+</li>
+<li>
+          <a href="/projects.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
           <a href="projects.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
-            <span class="text-xs font-mono text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">04</span>
-            <span>PROJECTS</span>
-          </a>
-        </li>
-        <li>
+<span class="text-xs font-mono text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">04</span>
+<span>PROJECTS</span>
+</a>
+</li>
+<li>
+          <a href="/blog.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-accent dark:text-night-accent cursor-open">
+            <span class="text-xs font-mono transition-colors">05</span>
+            <span>BLOG</span>
+            <span class="text-xs font-mono border border-day-accent dark:border-night-accent px-2 py-0.5 rounded-full">CURRENT</span>
           <a href="recommendations.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
             <span class="text-xs font-mono text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">05</span>
             <span>RECOMMENDATIONS</span>
-          </a>
-        </li>
-        <li>
+</a>
+</li>
+<li>
+          <a href="/contact.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
           <a href="contact.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
-            <span class="text-xs font-mono text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">06</span>
-            <span>CONTACT</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
+<span class="text-xs font-mono text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">06</span>
+<span>CONTACT</span>
+</a>
 
-    <div class="border-t border-day-border dark:border-night-border pt-4 font-mono text-[10px] tracking-widest text-day-secondary dark:text-night-secondary uppercase flex justify-between">
+</nav>
+
+<div class="border-t border-day-border dark:border-night-border pt-4 font-mono text-[10px] tracking-widest text-day-secondary dark:text-night-secondary uppercase flex justify-between">
+      <span>MOINWEB</span>
       <span>MOINWEB.INFO</span>
-      <span>ALL RIGHTS RESERVED</span>
-    </div>
-  </div>
+<span>ALL RIGHTS RESERVED</span>
+</div>
+</div>
 
-  <main id="composition-wrapper" class="relative w-full min-h-screen viewport-canvas bg-grid-pattern pt-28 pb-16">
 
-    <div class="layer-bg fixed inset-0 pointer-events-none z-0 overflow-hidden">
-      <div class="floating-ring top-1/3 left-10 parallax-elem" data-depth="0.02"></div>
+<div class="layer-bg fixed inset-0 pointer-events-none z-0 overflow-hidden">
+<div class="floating-ring top-1/3 left-10 parallax-elem" data-depth="0.02"></div>
+      <div class="floating-crosshair top-1/4 right-20 parallax-elem" data-depth="0.04">+ BLOG_STAGE // 05</div>
+      <div class="floating-crosshair bottom-1/3 left-1/4 parallax-elem" data-depth="0.03">[INSIGHTS_AND_GUIDES]</div>
       <div class="floating-crosshair top-1/4 right-20 parallax-elem" data-depth="0.04">+ ABOUT_STAGE // 02</div>
       <div class="floating-crosshair bottom-1/3 left-1/4 parallax-elem" data-depth="0.03">[SPATIAL_PERSPECTIVE_GRID]</div>
-    </div>
+</div>
 
+    <!-- Header Section -->
+    <section class="relative z-10 min-h-[45vh] flex flex-col justify-center px-6 md:px-16 lg:px-24 mb-12">
+      <div class="max-w-7xl mx-auto w-full space-y-6">
     <section class="relative z-10 min-h-[75vh] flex flex-col justify-center px-6 md:px-16 lg:px-24 mb-20">
       <div class="max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-        
+
+        <div class="inline-flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-day-accent dark:text-night-accent reveal-item">
+          <span>BLOG / 05</span>
+          <span class="w-8 h-[1px] bg-day-accent dark:bg-night-accent"></span>
+          <span>PERSPECTIVES & GUIDES</span>
         <div class="lg:col-span-8 space-y-6">
           <div class="inline-flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-day-accent dark:text-night-accent reveal-item">
             <span>ABOUT / 02</span>
@@ -427,8 +274,20 @@
           <p class="text-xl md:text-3xl font-light text-day-secondary dark:text-night-secondary max-w-2xl leading-relaxed reveal-item border-l-2 border-day-accent dark:border-night-accent pl-6 pt-2">
             “I’m Moinuddin — a web designer and developer creating fast, SEO-friendly websites for small businesses.”
           </p>
-        </div>
+</div>
 
+        <h1 class="font-bold tracking-tighter uppercase leading-[0.85] text-day-primary dark:text-night-primary select-none">
+          <span class="block text-6xl sm:text-8xl md:text-9xl font-black clip-reveal">
+            THOUGHTS
+          </span>
+          <span class="block text-5xl sm:text-7xl md:text-8xl font-serif italic text-day-secondary dark:text-night-secondary -mt-2 sm:-mt-4 clip-reveal">
+            & GUIDES<span class="text-day-accent dark:text-night-accent font-sans not-italic">.</span>
+          </span>
+        </h1>
+
+        <p class="text-xl md:text-3xl font-light text-day-secondary dark:text-night-secondary max-w-2xl leading-relaxed reveal-item border-l-2 border-day-accent dark:border-night-accent pl-6 pt-2">
+          Website design ideas, UX insights, technical SEO strategies, and small business growth guides.
+        </p>
         <div class="lg:col-span-4 flex flex-col items-center justify-center relative reveal-item">
           <div id="portrait-3d-box" class="portrait-frame relative w-full max-w-md aspect-[4/5] overflow-hidden border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface shadow-2xl">
             <img src="assets/images/moinuddin.webp" alt="Portrait of Moinuddin, web designer and developer at MoinWeb" class="w-full h-full object-cover grayscale contrast-125 hover:grayscale-0 transition-all duration-700">
@@ -503,12 +362,32 @@
             The aim is never just to build a website, but to create a fast, responsive, search-friendly site that helps small businesses look credible, get found, and turn visitors into enquiries.
           </p>
         </div>
-      </div>
-    </section>
+</div>
+</section>
 
+    <!-- Category Filters Section -->
+    <section class="relative z-10 px-6 md:px-16 lg:px-24 mb-16">
+      <div class="max-w-6xl mx-auto space-y-8 reveal-item">
     <section class="relative z-10 px-6 md:px-16 lg:px-24 py-28 border-t border-day-border/60 dark:border-night-border/40 bg-day-surface/40 dark:bg-night-surface/40">
       <div class="max-w-6xl mx-auto space-y-24">
-        
+
+        <!-- Category Tabs -->
+        <div class="flex flex-wrap gap-3 font-mono text-xs">
+          <button data-category="all" class="category-btn active px-5 py-2.5 border border-day-border dark:border-night-border rounded-full uppercase tracking-wider transition-all cursor-open">
+            ALL ARTICLES
+          </button>
+          <button data-category="web-design" class="category-btn px-5 py-2.5 border border-day-border dark:border-night-border rounded-full uppercase tracking-wider bg-day-surface dark:bg-night-surface text-day-primary dark:text-night-primary hover:border-day-accent dark:hover:border-night-accent transition-all cursor-open">
+            Web Design
+          </button>
+          <button data-category="ux-ui" class="category-btn px-5 py-2.5 border border-day-border dark:border-night-border rounded-full uppercase tracking-wider bg-day-surface dark:bg-night-surface text-day-primary dark:text-night-primary hover:border-day-accent dark:hover:border-night-accent transition-all cursor-open">
+            UX & UI
+          </button>
+          <button data-category="seo-performance" class="category-btn px-5 py-2.5 border border-day-border dark:border-night-border rounded-full uppercase tracking-wider bg-day-surface dark:bg-night-surface text-day-primary dark:text-night-primary hover:border-day-accent dark:hover:border-night-accent transition-all cursor-open">
+            SEO & Performance
+          </button>
+          <button data-category="small-business" class="category-btn px-5 py-2.5 border border-day-border dark:border-night-border rounded-full uppercase tracking-wider bg-day-surface dark:bg-night-surface text-day-primary dark:text-night-primary hover:border-day-accent dark:hover:border-night-accent transition-all cursor-open">
+            Small Business Websites
+          </button>
         <div class="font-mono text-xs uppercase tracking-widest text-day-accent dark:text-night-accent reveal-item">
           02 // HOW I THINK
         </div>
@@ -545,23 +424,30 @@
               DESIGN.
             </h3>
           </div>
-        </div>
+</div>
 
-      </div>
-    </section>
+</div>
+</section>
 
+    <!-- Blog Articles Grid -->
+    <section class="relative z-10 px-6 md:px-16 lg:px-24 py-6 border-t border-day-border/60 dark:border-night-border/40">
+      <div class="max-w-6xl mx-auto space-y-12">
     <section class="relative z-10 px-6 md:px-16 lg:px-24 py-28 border-t border-day-border/60 dark:border-night-border/40">
       <div class="max-w-6xl mx-auto space-y-16">
-        
-        <div class="flex justify-between items-end border-b border-day-border/60 dark:border-night-border/40 pb-6 reveal-item">
-          <div class="font-mono text-xs uppercase tracking-widest text-day-accent dark:text-night-accent">
+
+<div class="flex justify-between items-end border-b border-day-border/60 dark:border-night-border/40 pb-6 reveal-item">
+<div class="font-mono text-xs uppercase tracking-widest text-day-accent dark:text-night-accent">
+            PUBLISHED INSIGHTS // ARCHIVE
             03 // WHAT I CREATE
-          </div>
+</div>
+          <div class="font-mono text-xs text-day-secondary dark:text-night-secondary" id="article-count">
+            SHOWING ALL ARTICLES
           <div class="font-mono text-xs text-day-secondary dark:text-night-secondary">
             CAPABILITIES
-          </div>
-        </div>
+</div>
+</div>
 
+        <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="flex flex-wrap gap-x-8 gap-y-6 justify-center md:justify-start items-center">
           <span class="floating-cap font-mono text-3xl sm:text-6xl md:text-7xl font-bold uppercase tracking-tight text-day-primary dark:text-night-primary cursor-open reveal-item">WEB DESIGN</span>
           <span class="text-day-accent dark:text-night-accent text-3xl font-mono">•</span>
@@ -589,7 +475,40 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          
+
+          <!-- Article 1: Web Design -->
+
+          <article
+            class="blog-card border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface flex flex-col justify-between overflow-hidden reveal-item cursor-open"
+            data-category="web-design"
+            onclick="window.location.href='/blog/hire-freelance-website-designer.html'"
+          >
+            <div>
+              <div class="overflow-hidden border-b border-day-border dark:border-night-border">
+                <img
+                  src="/assets/blogs/hire-freelance-website-designer.webp"
+                  alt="How to hire a freelance website designer for a small business"
+                  loading="lazy"
+                  decoding="async"
+                  class="grayscale contrast-125 hover:grayscale-0 hover:scale-105 transition-all duration-700"
+                >
+              </div>
+
+              <div class="p-8 space-y-4">
+                <div class="flex justify-between items-center font-mono text-[10px] uppercase tracking-widest text-day-secondary dark:text-night-secondary">
+                  <span>OCTOBER 15, 2026</span>
+                  <span class="text-day-accent dark:text-night-accent">Web Design</span>
+                </div>
+
+                <h3 class="text-2xl font-bold uppercase tracking-tight text-day-primary dark:text-night-primary leading-snug">
+                  How to Hire a Freelance Website Designer: A Complete Guide for Small Businesses
+                </h3>
+
+                <p class="font-light text-sm text-day-secondary dark:text-night-secondary leading-relaxed">
+                  To hire a freelance website designer, start by defining your website goals, then review portfolios of similar projects, compare written quotes by scope (not just price), and agree on ownership, revisions, and support before work begins. 
+                </p>
+              </div>
+            </div>
           <div class="approach-card p-6 space-y-4 reveal-item">
             <span class="font-mono text-2xl font-bold text-day-accent dark:text-night-accent">01</span>
             <h4 class="text-2xl font-bold uppercase tracking-tight text-day-primary dark:text-night-primary">UNDERSTAND</h4>
@@ -598,6 +517,46 @@
             </p>
           </div>
 
+            <div class="p-8 pt-0 flex justify-between items-center font-mono text-xs text-day-primary dark:text-night-primary">
+              <span>READ ARTICLE</span>
+              <span class="text-day-accent dark:text-night-accent">→</span>
+            </div>
+          </article>
+
+
+          <!-- Article 2: UX & UI -->
+
+          <article
+            class="blog-card border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface flex flex-col justify-between overflow-hidden reveal-item cursor-open"
+            data-category="web-design"
+            onclick="window.location.href='/blog/freelance-website-designer-prices.html'"
+          >
+            <div>
+              <div class="overflow-hidden border-b border-day-border dark:border-night-border">
+                <img
+                  src="/assets/blogs/website-design-prices.webp"
+                  alt="Freelance website designer prices and small business website costs"
+                  loading="lazy"
+                  decoding="async"
+                  class="grayscale contrast-125 hover:grayscale-0 hover:scale-105 transition-all duration-700"
+                >
+              </div>
+
+              <div class="p-8 space-y-4">
+                <div class="flex justify-between items-center font-mono text-[10px] uppercase tracking-widest text-day-secondary dark:text-night-secondary">
+                  <span>OCTOBER 15, 2026</span>
+                  <span class="text-day-accent dark:text-night-accent">Web Design</span>
+                </div>
+
+                <h3 class="text-2xl font-bold uppercase tracking-tight text-day-primary dark:text-night-primary leading-snug">
+                  Freelance Website Designer Prices: What Does a Business Website Cost?
+                </h3>
+
+                <p class="font-light text-sm text-day-secondary dark:text-night-secondary leading-relaxed">
+                  Freelance website designer prices for small business projects typically range from $200 to $700, depending on the number of pages, custom design, features, and content needs. Larger or ecommerce projects are usually quoted individually.
+                </p>
+              </div>
+            </div>
           <div class="approach-card p-6 space-y-4 reveal-item">
             <span class="font-mono text-2xl font-bold text-day-accent dark:text-night-accent">02</span>
             <h4 class="text-2xl font-bold uppercase tracking-tight text-day-primary dark:text-night-primary">PLAN</h4>
@@ -606,6 +565,11 @@
             </p>
           </div>
 
+            <div class="p-8 pt-0 flex justify-between items-center font-mono text-xs text-day-primary dark:text-night-primary">
+              <span>READ ARTICLE</span>
+              <span class="text-day-accent dark:text-night-accent">→</span>
+            </div>
+          </article>
           <div class="approach-card p-6 space-y-4 reveal-item">
             <span class="font-mono text-2xl font-bold text-day-accent dark:text-night-accent">03</span>
             <h4 class="text-2xl font-bold uppercase tracking-tight text-day-primary dark:text-night-primary">DESIGN</h4>
@@ -679,7 +643,7 @@
           <div class="p-8 border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface hover:border-day-accent dark:hover:border-night-accent transition-colors reveal-item">
             <span class="font-mono text-sm font-bold tracking-widest uppercase text-day-primary dark:text-night-primary block">ALWAYS LEARNING</span>
           </div>
-        </div>
+</div>
       </div>
     </section>
 
@@ -694,31 +658,30 @@
         <p class="text-3xl sm:text-6xl font-serif italic text-day-secondary dark:text-night-secondary reveal-item">
           I BUILD EXPERIENCES.
         </p>
-      </div>
-    </section>
+</div>
+</section>
 
+    <!-- Call to Action Section -->
+    <section class="relative z-10 py-28 px-6 md:px-16 lg:px-24 border-t-2 border-day-primary dark:border-night-primary bg-day-surface dark:bg-night-surface mt-20">
     <section class="relative z-10 py-28 px-6 md:px-16 lg:px-24 border-t-2 border-day-primary dark:border-night-primary bg-day-surface dark:bg-night-surface">
-      <div class="max-w-4xl mx-auto text-center space-y-8">
-        <div class="font-mono text-xs uppercase tracking-widest text-day-accent dark:text-night-accent reveal-item">
+<div class="max-w-4xl mx-auto text-center space-y-8">
+<div class="font-mono text-xs uppercase tracking-widest text-day-accent dark:text-night-accent reveal-item">
+          LET'S COLLABORATE
           WHAT'S NEXT?
-        </div>
-        <h2 class="text-4xl sm:text-7xl font-bold uppercase tracking-tighter text-day-primary dark:text-night-primary reveal-item">
+</div>
+<h2 class="text-4xl sm:text-7xl font-bold uppercase tracking-tighter text-day-primary dark:text-night-primary reveal-item">
+          HAVE A PROJECT IN MIND?
           LET'S CREATE SOMETHING MEANINGFUL.
-        </h2>
-        <div class="flex flex-wrap justify-center gap-6 pt-4 reveal-item">
+</h2>
+<div class="flex flex-wrap justify-center gap-6 pt-4 reveal-item">
+          <a href="contact.html" class="px-8 py-4 bg-day-primary dark:bg-night-primary text-day-bg dark:text-night-bg font-mono text-xs uppercase tracking-widest hover:bg-day-accent dark:hover:bg-night-accent hover:text-white transition-colors duration-300 cursor-open">
           <a href="contact.html" aria-label="Start a website project with MoinWeb" class="px-8 py-4 bg-day-primary dark:bg-night-primary text-day-bg dark:text-night-bg font-mono text-xs uppercase tracking-widest hover:bg-day-accent dark:hover:bg-night-accent hover:text-white transition-colors duration-300 cursor-open">
-            START A PROJECT →
-          </a>
-          <a href="projects.html" class="px-8 py-4 border border-day-border dark:border-night-border font-mono text-xs uppercase tracking-widest text-day-primary dark:text-night-primary hover:border-day-accent dark:hover:border-night-accent transition-colors duration-300 cursor-open">
-            VIEW MY WORK →
-          </a>
-        </div>
-      </div>
-    </section>
+START A PROJECT →
+</a>
+<a href="projects.html" class="px-8 py-4 border border-day-border dark:border-night-border font-mono text-xs uppercase tracking-widest text-day-primary dark:text-night-primary hover:border-day-accent dark:hover:border-night-accent transition-colors duration-300 cursor-open">
 
-  </main>
 
-  <div id="page-transition" class="fixed inset-0 z-[90] bg-day-primary dark:bg-night-primary translate-y-full transition-transform duration-500 pointer-events-none"></div>
+<div id="page-transition" class="fixed inset-0 z-[90] bg-day-primary dark:bg-night-primary translate-y-full transition-transform duration-500 pointer-events-none"></div>
 
   <!--Start of Tawk.to Script-->
   <script type="text/javascript">
@@ -734,7 +697,7 @@
   </script>
   <!--End of Tawk.to Script-->
   
-  <script>
+<script>
     /* -------------------------------------------------------------
        CONFIGURABLE SOCIAL LINKS (EASY REPLACEMENT)
     ------------------------------------------------------------- */
@@ -746,7 +709,7 @@
       threads: "https://www.threads.com/@moinweb"
     };
 
-    document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
 
       /* Inject Social Links from Configuration Object */
       const linkLinkedin = document.getElementById('social-link-linkedin');
@@ -761,133 +724,69 @@
       if (linkInstagram) linkInstagram.setAttribute('href', SOCIAL_LINKS.instagram);
       if (linkThreads) linkThreads.setAttribute('href', SOCIAL_LINKS.threads);
 
-      /* -------------------------------------------------------------
-         1. DAY / NIGHT THEME SYSTEM
+/* -------------------------------------------------------------
+        1. DAY / NIGHT THEME SYSTEM
+     ------------------------------------------------------------- */
+});
+
+/* -------------------------------------------------------------
+         4. BLOG CATEGORY FILTER ENGINE
       ------------------------------------------------------------- */
-      const themeToggleBtn = document.getElementById('theme-toggle');
-      const htmlElement = document.documentElement;
+      const categoryBtns = document.querySelectorAll('.category-btn');
+      const articles = document.querySelectorAll('#articles-grid article');
+      const articleCount = document.getElementById('article-count');
 
-      const savedTheme = localStorage.getItem('theme') || 'dark';
-      if (savedTheme === 'dark') {
-        htmlElement.classList.add('dark');
-      } else {
-        htmlElement.classList.remove('dark');
-      }
+      let currentCategory = 'all';
 
-      themeToggleBtn.addEventListener('click', () => {
-        if (htmlElement.classList.contains('dark')) {
-          htmlElement.classList.remove('dark');
-          localStorage.setItem('theme', 'light');
-        } else {
-          htmlElement.classList.add('dark');
-          localStorage.setItem('theme', 'dark');
-        }
-      });
+      function filterArticles() {
+        let visibleCount = 0;
 
-      /* -------------------------------------------------------------
-         2. OVERLAY MENU TOGGLE
-      ------------------------------------------------------------- */
-      const menuToggleBtn = document.getElementById('menu-toggle');
-      const menuText = document.getElementById('menu-text');
-      const navOverlay = document.getElementById('nav-overlay');
-      let isMenuOpen = false;
+        articles.forEach(article => {
+          const category = article.getAttribute('data-category');
+          const matchesCategory = (currentCategory === 'all' || category === currentCategory);
 
-      menuToggleBtn.addEventListener('click', () => {
-        isMenuOpen = !isMenuOpen;
-        if (isMenuOpen) {
-          navOverlay.classList.remove('opacity-0', 'pointer-events-none');
-          menuText.textContent = 'CLOSE';
-        } else {
-          navOverlay.classList.add('opacity-0', 'pointer-events-none');
-          menuText.textContent = 'MENU';
-        }
-      });
-
-      /* -------------------------------------------------------------
-         3. CUSTOM CURSOR ENGINE
-      ------------------------------------------------------------- */
-      const cursorDot = document.getElementById('cursor-dot');
-      const cursorText = document.getElementById('cursor-text');
-
-      let mouseX = 0, mouseY = 0;
-      let cursorX = 0, cursorY = 0;
-
-      window.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-      });
-
-      function renderCursor() {
-        cursorX += (mouseX - cursorX) * 0.2;
-        cursorY += (mouseY - cursorY) * 0.2;
-
-        cursorDot.style.left = `${cursorX}px`;
-        cursorDot.style.top = `${cursorY}px`;
-
-        requestAnimationFrame(renderCursor);
-      }
-      requestAnimationFrame(renderCursor);
-
-      document.querySelectorAll('.cursor-open, a, button').forEach(element => {
-        element.addEventListener('mouseenter', () => {
-          cursorDot.classList.add('expand');
-          cursorText.textContent = 'OPEN';
-        });
-        element.addEventListener('mouseleave', () => {
-          cursorDot.classList.remove('expand');
-          cursorText.textContent = '';
-        });
-      });
-
-      /* -------------------------------------------------------------
-         4. SCROLL REVEAL (INTERSECTION OBSERVER)
-      ------------------------------------------------------------- */
-      const revealItems = document.querySelectorAll('.reveal-item, .clip-reveal');
-      
-      const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.1
-      };
-
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('revealed');
+          if (matchesCategory) {
+            article.style.display = 'flex';
+            visibleCount++;
+          } else {
+            article.style.display = 'none';
           }
         });
-      }, observerOptions);
 
-      revealItems.forEach(item => revealObserver.observe(item));
+        articleCount.textContent = `SHOWING ${visibleCount} ARTICLE${visibleCount === 1 ? '' : 'S'}`;
+      }
+
+      categoryBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          categoryBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          currentCategory = btn.getAttribute('data-category');
+          filterArticles();
+        });
+      });
 
       /* -------------------------------------------------------------
+         5. SCROLL REVEAL (INTERSECTION OBSERVER)
+         4. SCROLL REVEAL (INTERSECTION OBSERVER)
+     ------------------------------------------------------------- */
+const revealItems = document.querySelectorAll('.reveal-item, .clip-reveal');
+
+
+revealItems.forEach(item => revealObserver.observe(item));
+
+/* -------------------------------------------------------------
+         6. SPATIAL MOUSE PARALLAX RESPONSE
          5. SPATIAL MOUSE PARALLAX & PORTRAIT / SOCIAL DOCK 3D RESPONSE
-      ------------------------------------------------------------- */
-      const parallaxElems = document.querySelectorAll('.parallax-elem');
+     ------------------------------------------------------------- */
+const parallaxElems = document.querySelectorAll('.parallax-elem');
       const portraitBox = document.getElementById('portrait-3d-box');
       const socialDockContainer = document.getElementById('social-dock-container');
 
-      let targetX = 0, targetY = 0;
-      let currentX = 0, currentY = 0;
+let targetX = 0, targetY = 0;
+let currentX = 0, currentY = 0;
 
-      const windowHalfX = window.innerWidth / 2;
-      const windowHalfY = window.innerHeight / 2;
-
-      window.addEventListener('mousemove', (e) => {
-        targetX = (e.clientX - windowHalfX) / windowHalfX;
-        targetY = (e.clientY - windowHalfY) / windowHalfY;
-      });
-
-      function animateParallax() {
-        currentX += (targetX - currentX) * 0.05;
-        currentY += (targetY - currentY) * 0.05;
-
-        parallaxElems.forEach(elem => {
-          const depth = parseFloat(elem.getAttribute('data-depth')) || 0.03;
-          const moveX = currentX * (depth * 200);
-          const moveY = currentY * (depth * 200);
-          elem.style.transform = `translate3d(${moveX}px, ${moveY}px, 0px)`;
-        });
+elem.style.transform = `translate3d(${moveX}px, ${moveY}px, 0px)`;
+});
 
         if (portraitBox) {
           const rotX = currentY * -8;
@@ -901,36 +800,14 @@
           socialDockContainer.style.transform = `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateZ(12px)`;
         }
 
-        requestAnimationFrame(animateParallax);
-      }
+requestAnimationFrame(animateParallax);
+}
 
-      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (window.innerWidth > 768 && !prefersReducedMotion) {
-        requestAnimationFrame(animateParallax);
-      }
+}
 
-      /* -------------------------------------------------------------
+/* -------------------------------------------------------------
+         7. PAGE TRANSITION LEAVE
          6. PAGE TRANSITION LEAVE
-      ------------------------------------------------------------- */
-      const transitionOverlay = document.getElementById('page-transition');
-      const navLinks = document.querySelectorAll('a[href$=".html"]');
-
-      navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-          const targetUrl = link.getAttribute('href');
-          
-          if (targetUrl && !targetUrl.startsWith('#') && !targetUrl.startsWith('http')) {
-            e.preventDefault();
-            transitionOverlay.classList.remove('translate-y-full');
-            
-            setTimeout(() => {
-              window.location.href = targetUrl;
-            }, 500);
-          }
-        });
-      });
-
-    });
-  </script>
-</body>
-</html>
+     ------------------------------------------------------------- */
+const transitionOverlay = document.getElementById('page-transition');
+const navLinks = document.querySelectorAll('a[href$=".html"]');
