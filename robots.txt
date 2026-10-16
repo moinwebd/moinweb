@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://moinweb.info/sitemap.xml
+Sitemap: https://moinweb.info/sitemap-1.xml
