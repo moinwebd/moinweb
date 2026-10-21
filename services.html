@@ -4,39 +4,82 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Services | Web Design &amp; Development | MoinWeb</title>
-  <meta name="description" content="Explore MoinWeb's services. Interactive spatial capability experience covering web design, UI/UX systems, frontend engineering, WordPress development, and performance optimization.">
+  <title>Freelance Web Design, WordPress &amp; Local SEO Services | MoinWeb</title>
+  <meta name="description" content="Explore expert freelance services by Moinuddin at MoinWeb: custom website design, WordPress development, UI/UX systems, and result-driven Local SEO for small businesses worldwide.">
+  <meta name="keywords" content="freelance web design services, WordPress development, Local SEO specialist, UI UX design, website speed optimization, MoinWeb services">
+  <meta name="author" content="Moinuddin">
+  <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://moinweb.info/services.html">
-  
-  <!-- Basic SEO -->
+  <meta name="theme-color" content="#08090C">
+  <link rel="sitemap" type="application/xml" href="https://moinweb.info/sitemap-1.xml">
+
+  <!-- Open Graph / Facebook + LinkedIn -->
   <meta property="og:site_name" content="MoinWeb">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://moinweb.info/">
-  <meta property="og:title" content="MoinWeb | Web Design & SEO">
-  <meta property="og:description" content="Helping small businesses grow with modern websites, SEO, and local SEO.">
-  
-  <!-- Facebook + LinkedIn -->
+  <meta property="og:url" content="https://moinweb.info/services.html">
+  <meta property="og:title" content="Freelance Web Design, WordPress &amp; Local SEO Services | MoinWeb">
+  <meta property="og:description" content="Custom website design, WordPress development, and Local SEO services designed to help small businesses rank higher and convert visitors.">
   <meta property="og:image" content="https://moinweb.info/assets/moinweb-og.webp">
   <meta property="og:image:secure_url" content="https://moinweb.info/assets/moinweb-og.webp">
-  <meta property="og:image:alt" content="MoinWeb — Web Design, SEO and Local SEO">
+  <meta property="og:image:alt" content="MoinWeb Services — Web Design, WordPress and Local SEO">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   
   <!-- X (Twitter) -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MoinWeb | Web Design & SEO">
-  <meta name="twitter:description" content="Modern websites, SEO, and local SEO for small businesses.">
+  <meta name="twitter:title" content="Freelance Web Design, WordPress &amp; Local SEO Services | MoinWeb">
+  <meta name="twitter:description" content="Custom web design, WordPress development, and Local SEO services by Moinuddin at MoinWeb.">
   <meta name="twitter:image" content="https://moinweb.info/assets/moinweb-og.webp">
-  <meta name="twitter:image:alt" content="MoinWeb — Web Design, SEO and Local SEO">
+  <meta name="twitter:image:alt" content="MoinWeb Services — Web Design, WordPress and Local SEO">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="assets/android-chrome-192x192.png">
-  <link rel="icon" type="image/png" sizes="512x512" href="assets/android-chrome-512x512.png">
-  <meta name="theme-color" content="#ffffff">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/assets/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/assets/android-chrome-512x512.png">
+
+  <!-- Structured Data: Service & Breadcrumb Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "https://moinweb.info/services.html#service",
+        "name": "Freelance Web Design, WordPress & Local SEO Services",
+        "provider": {
+          "@type": "ProfessionalService",
+          "name": "MoinWeb",
+          "url": "https://moinweb.info/",
+          "founder": {
+            "@type": "Person",
+            "name": "Moinuddin",
+            "jobTitle": "Freelance Web Designer & Local SEO Specialist",
+            "url": "https://moinweb.info/about.html"
+          }
+        },
+        "description": "Custom website design, WordPress development, UI/UX engineering, and result-driven Local SEO for small businesses worldwide.",
+        "areaServed": "Worldwide",
+        "serviceType": [
+          "Website Design",
+          "WordPress Development",
+          "Local SEO",
+          "UI/UX Design",
+          "Website Speed Optimization"
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://moinweb.info/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://moinweb.info/services.html" }
+        ]
+      }
+    ]
+  }
+  </script>
   
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
@@ -100,7 +143,7 @@
 
     * {
       box-sizing: border-box;
-      cursor: none; /* Override default mouse cursor */
+      cursor: none;
     }
 
     body {
@@ -266,11 +309,11 @@
 
   <header class="fixed top-0 left-0 w-full z-50 p-6 md:p-10 flex justify-between items-center mix-blend-difference">
     <a href="index.html" class="font-mono text-xs font-bold tracking-widest text-white hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
-      | MOINWEBD
+      MOINWEB
     </a>
 
     <div class="hidden sm:flex items-center gap-2 px-3 py-1 border border-white/20 rounded-full text-[10px] font-mono tracking-widest uppercase text-white/80 backdrop-blur-md">
-      <span>SERVICES / 03</span>
+      <span>03 / SERVICES</span>
     </div>
 
     <div class="flex items-center gap-4">
@@ -288,47 +331,54 @@
     </div>
   </header>
 
-  <div id="nav-overlay" class="fixed inset-0 z-40 bg-day-bg dark:bg-night-bg opacity-0 pointer-events-none transition-opacity duration-500 flex flex-col justify-between p-8 md:p-16">
+  <!-- Unified Overlay Navigation (Consistent Across All Pages) -->
+  <div id="nav-overlay" class="fixed inset-0 z-40 bg-day-bg dark:bg-night-bg opacity-0 pointer-events-none transition-opacity duration-500 flex flex-col justify-between p-8 md:p-16 overflow-y-auto">
     <div class="flex justify-between items-center font-mono text-xs text-day-secondary dark:text-night-secondary">
       <span>SPATIAL NAVIGATION</span>
-      <span>INDEX / 2026</span>
+      <span>MOINWEB / 2026</span>
     </div>
 
-    <nav aria-label="Overlay Navigation" class="my-auto">
-      <ul class="flex flex-col gap-4 md:gap-6 font-mono">
+    <nav aria-label="Overlay Navigation" class="my-auto py-8">
+      <ul class="flex flex-col gap-3 md:gap-5 font-mono">
         <li>
-          <a href="index.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
-            <span class="text-xs font-mono text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">01</span>
+          <a href="index.html" class="group flex items-center gap-4 text-2xl sm:text-4xl md:text-5xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
+            <span class="text-xs font-mono text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">00</span>
             <span>HOME</span>
           </a>
         </li>
         <li>
-          <a href="about.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
-            <span class="text-xs font-mono text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">02</span>
+          <a href="about.html" class="group flex items-center gap-4 text-2xl sm:text-4xl md:text-5xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
+            <span class="text-xs font-mono text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">01</span>
             <span>ABOUT</span>
           </a>
         </li>
         <li>
-          <a href="services.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-accent dark:text-night-accent cursor-open">
-            <span class="text-xs font-mono transition-colors">03</span>
-            <span>SERVICES</span>
-            <span class="text-xs font-mono border border-day-accent dark:border-night-accent px-2 py-0.5 rounded-full">CURRENT</span>
+          <a href="blog.html" class="group flex items-center gap-4 text-2xl sm:text-4xl md:text-5xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
+            <span class="text-xs font-mono text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">02</span>
+            <span>BLOG</span>
           </a>
         </li>
         <li>
-          <a href="projects.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
+          <a href="services.html" class="group flex items-center gap-4 text-2xl sm:text-4xl md:text-5xl font-bold tracking-tighter uppercase text-day-accent dark:text-night-accent cursor-open">
+            <span class="text-xs font-mono transition-colors">03</span>
+            <span>SERVICES</span>
+            <span class="text-[10px] font-mono border border-day-accent dark:border-night-accent px-2 py-0.5 rounded-full">CURRENT</span>
+          </a>
+        </li>
+        <li>
+          <a href="projects.html" class="group flex items-center gap-4 text-2xl sm:text-4xl md:text-5xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
             <span class="text-xs font-mono text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">04</span>
             <span>PROJECTS</span>
           </a>
         </li>
         <li>
-          <a href="recommendations.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
+          <a href="recommendations.html" class="group flex items-center gap-4 text-2xl sm:text-4xl md:text-5xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
             <span class="text-xs font-mono text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">05</span>
             <span>RECOMMENDATIONS</span>
           </a>
         </li>
         <li>
-          <a href="contact.html" class="group flex items-center gap-4 text-3xl md:text-6xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
+          <a href="contact.html" class="group flex items-center gap-4 text-2xl sm:text-4xl md:text-5xl font-bold tracking-tighter uppercase text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
             <span class="text-xs font-mono text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">06</span>
             <span>CONTACT</span>
           </a>
@@ -337,14 +387,14 @@
     </nav>
 
     <div class="border-t border-day-border dark:border-night-border pt-4 font-mono text-[10px] tracking-widest text-day-secondary dark:text-night-secondary uppercase flex justify-between">
-      <span>MOINWEB</span>
+      <span>MOINWEB.INFO</span>
       <span>ALL RIGHTS RESERVED</span>
     </div>
   </div>
 
   <main id="composition-wrapper" class="relative w-full min-h-screen viewport-canvas bg-grid-pattern pt-28 pb-16">
 
-    <div class="layer-bg fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="layer-bg fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
       <div class="absolute top-1/4 left-8 text-[10px] font-mono text-day-secondary/30 dark:text-night-secondary/20 parallax-elem" data-depth="0.04">+ SCENE_03 // SERVICES</div>
       <div class="absolute top-2/3 right-12 text-[10px] font-mono text-day-secondary/30 dark:text-night-secondary/20 parallax-elem" data-depth="0.08">[CAPABILITIES_MATRIX: ACTIVE]</div>
       <div class="absolute top-1/2 left-1/4 w-[1px] h-96 bg-day-border/30 dark:bg-night-border/20"></div>
@@ -354,12 +404,14 @@
       <div class="max-w-7xl mx-auto w-full">
         
         <div class="inline-flex items-center gap-3 font-mono text-xs uppercase tracking-widest text-day-accent dark:text-night-accent mb-6 reveal-item">
-          <span>SERVICES / 03</span>
+          <span>03 / SERVICES</span>
           <span class="w-8 h-[1px] bg-day-accent dark:bg-night-accent"></span>
-          <span class="text-day-secondary dark:text-night-secondary">WHAT I CAN BUILD FOR YOU</span>
+          <span class="text-day-secondary dark:text-night-secondary">EXPERT WEB DESIGN &amp; LOCAL SEO SOLUTIONS</span>
         </div>
 
+        <!-- SEO-Optimized H1 with Visual Display Styling Preserved -->
         <h1 class="font-bold tracking-tighter uppercase leading-[0.88] text-day-primary dark:text-night-primary select-none mb-8">
+          <span class="sr-only">Freelance Web Design, WordPress Development, and Local SEO Services by MoinWeb — </span>
           <span class="block text-6xl sm:text-8xl md:text-9xl font-black clip-reveal">
             WHAT
           </span>
@@ -372,19 +424,20 @@
         </h1>
 
         <p class="text-lg md:text-2xl font-light text-day-secondary dark:text-night-secondary max-w-2xl leading-relaxed reveal-item border-l-2 border-day-accent dark:border-night-accent pl-6">
-          Digital experiences designed to look distinctive, work beautifully, and perform reliably.
+          High-performance websites, custom WordPress solutions, and Local SEO architectures engineered to help small businesses, law firms, and institutions rank higher and convert visitors into clients.
         </p>
 
       </div>
     </section>
 
-    <section class="relative z-10 py-20 px-6 md:px-16 lg:px-24 border-t border-day-border/60 dark:border-night-border/40">
+    <!-- Service Explorer Section (Pre-populated HTML for Googlebot SEO) -->
+    <section class="relative z-10 py-20 px-6 md:px-16 lg:px-24 border-t border-day-border/60 dark:border-night-border/40" aria-label="Services Explorer">
       
       <div class="max-w-7xl mx-auto">
         
         <div class="flex justify-between items-end mb-12 reveal-item">
           <div class="font-mono text-xs uppercase tracking-widest text-day-accent dark:text-night-accent">
-            <span>01 // SERVICE EXPLORER</span>
+            <span>01 // SERVICE EXPLORER &amp; CAPABILITIES</span>
           </div>
           <div class="hidden sm:block font-mono text-[10px] uppercase tracking-widest text-day-secondary dark:text-night-secondary">
             HOVER OR SELECT TO FOCUS ↓
@@ -400,7 +453,7 @@
                 WEB DESIGN
               </h2>
               <p class="service-desc-preview font-mono text-xs sm:text-sm text-day-secondary dark:text-night-secondary max-w-md hidden sm:block">
-                Clean, purposeful interfaces designed around strong visual hierarchy and user experience.
+                Clean, high-converting interfaces designed around strong visual hierarchy, trust signals, and user experience.
               </p>
             </div>
           </div>
@@ -409,10 +462,10 @@
             <span class="font-mono text-sm sm:text-xl font-bold text-day-accent dark:text-night-accent sm:order-2">02</span>
             <div class="space-y-2 sm:text-right sm:order-1">
               <h2 class="text-4xl sm:text-7xl md:text-8xl font-black uppercase tracking-tighter text-day-primary dark:text-night-primary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">
-                UI / UX DESIGN
+                UI / UX SYSTEMS
               </h2>
               <p class="service-desc-preview font-mono text-xs sm:text-sm text-day-secondary dark:text-night-secondary max-w-md ml-auto hidden sm:block">
-                Thoughtful interface systems that make digital products easier and more intuitive to use.
+                Thoughtful interface systems that make digital products and services intuitive and frictionless to use.
               </p>
             </div>
           </div>
@@ -421,10 +474,10 @@
             <span class="font-mono text-sm sm:text-xl font-bold text-day-accent dark:text-night-accent">03</span>
             <div class="space-y-2">
               <h2 class="text-4xl sm:text-6xl md:text-8xl font-black uppercase tracking-tighter text-transparent [-webkit-text-stroke:1.5px_var(--primary)] group-hover:text-day-primary dark:group-hover:text-night-primary transition-all duration-500">
-                FRONTEND
+                LOCAL SEO
               </h2>
               <p class="service-desc-preview font-mono text-xs sm:text-sm text-day-secondary dark:text-night-secondary max-w-md hidden sm:block">
-                Responsive, polished frontend experiences built with clean and maintainable code.
+                Google Map Pack optimization, sitemap architecture, and geo-targeted keywords that drive local customer calls.
               </p>
             </div>
           </div>
@@ -432,11 +485,11 @@
           <div class="service-node cursor-explore group flex flex-col sm:flex-row items-start sm:items-baseline gap-4 sm:gap-8 justify-start sm:justify-center" data-service="04">
             <span class="font-mono text-sm sm:text-xl font-bold text-day-accent dark:text-night-accent">04</span>
             <div class="space-y-2">
-              <h2 class="text-4xl sm:text-6xl md:text-7xl font-bold uppercase tracking-tighter text-day-primary dark:text-night-primary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">
+              <h2 class="text-4xl sm:text-6xl md:text-7xl font-bold uppercase tracking-tighter text-day-primary dark:text-night-primary group-hover:text-day-accent dark:hover:text-night-accent transition-colors">
                 WORDPRESS DEVELOPMENT
               </h2>
               <p class="service-desc-preview font-mono text-xs sm:text-sm text-day-secondary dark:text-night-secondary max-w-md hidden sm:block">
-                Custom WordPress websites built for flexibility, performance, and easy content management.
+                Custom WordPress websites built for lightning speed, secure content management, and scalability.
               </p>
             </div>
           </div>
@@ -448,7 +501,7 @@
                 RESPONSIVE DESIGN
               </h2>
               <p class="service-desc-preview font-mono text-xs sm:text-sm text-day-secondary dark:text-night-secondary max-w-md ml-auto hidden sm:block">
-                Interfaces that adapt naturally across desktop, tablet, and mobile.
+                Thumb-friendly, mobile-first interfaces that adapt naturally across desktop, tablet, and smartphones.
               </p>
             </div>
           </div>
@@ -456,11 +509,11 @@
           <div class="service-node cursor-explore group flex flex-col sm:flex-row items-start sm:items-baseline gap-4 sm:gap-8 justify-start" data-service="06">
             <span class="font-mono text-sm sm:text-xl font-bold text-day-accent dark:text-night-accent">06</span>
             <div class="space-y-2">
-              <h2 class="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter text-day-primary dark:text-night-primary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">
+              <h2 class="text-4xl sm:text-6xl md:text-7xl font-black uppercase tracking-tighter text-day-primary dark:text-night-primary group-hover:text-day-accent dark:hover:text-night-accent transition-colors">
                 SEO &amp; PERFORMANCE
               </h2>
               <p class="service-desc-preview font-mono text-xs sm:text-sm text-day-secondary dark:text-night-secondary max-w-md hidden sm:block">
-                Technical improvements that help websites become faster, more accessible, and easier to discover.
+                Core Web Vitals tuning, semantic HTML, and schema markup that make websites fast and search-friendly.
               </p>
             </div>
           </div>
@@ -471,12 +524,13 @@
 
     </section>
 
+    <!-- Detailed Capability Focus Section -->
     <section id="service-focus-section" class="relative z-10 py-24 px-6 md:px-16 lg:px-24 bg-day-surface/40 dark:bg-night-surface/20 border-y border-day-border/60 dark:border-night-border/40">
       
       <div class="max-w-6xl mx-auto">
         
         <div class="font-mono text-xs uppercase tracking-widest text-day-accent dark:text-night-accent mb-8 reveal-item">
-          <span>02 // CAPABILITY BREAKDOWN</span>
+          <span>02 // CAPABILITY DEEP DIVE</span>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
@@ -507,12 +561,12 @@
             </h3>
 
             <p id="detail-desc" class="text-lg md:text-xl font-light text-day-secondary dark:text-night-secondary leading-relaxed border-l-2 border-day-accent dark:border-night-accent pl-6">
-              Clean, purposeful interfaces designed around strong visual hierarchy and user experience.
+              Clean, high-converting interfaces designed around strong visual hierarchy, trust signals, and user experience.
             </p>
 
             <div class="pt-6">
               <div class="font-mono text-xs uppercase tracking-widest text-day-secondary dark:text-night-secondary mb-4">
-                KEY OUTPUTS &amp; DELIVERABLES:
+                KEY DELIVERABLES &amp; OUTCOMES:
               </div>
 
               <div id="detail-outputs" class="flex flex-wrap gap-3">
@@ -520,7 +574,7 @@
                 <span class="output-pill px-4 py-2 border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface font-mono text-xs uppercase tracking-wider text-day-primary dark:text-night-primary">Visual Direction</span>
                 <span class="output-pill px-4 py-2 border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface font-mono text-xs uppercase tracking-wider text-day-primary dark:text-night-primary">Interface Design</span>
                 <span class="output-pill px-4 py-2 border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface font-mono text-xs uppercase tracking-wider text-day-primary dark:text-night-primary">Responsive Layout</span>
-                <span class="output-pill px-4 py-2 border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface font-mono text-xs uppercase tracking-wider text-day-primary dark:text-night-primary">Interaction Design</span>
+                <span class="output-pill px-4 py-2 border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface font-mono text-xs uppercase tracking-wider text-day-primary dark:text-night-primary">Conversion Flow</span>
               </div>
             </div>
 
@@ -532,20 +586,21 @@
 
     </section>
 
+    <!-- Structured Workflow Process -->
     <section class="relative z-10 py-32 px-6 md:px-16 lg:px-24">
       <div class="max-w-7xl mx-auto">
         
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-16 gap-4 reveal-item">
           <div>
             <div class="font-mono text-xs uppercase tracking-widest text-day-accent dark:text-night-accent mb-2">
-              <span>03 // WORKFLOW</span>
+              <span>03 // EXECUTION WORKFLOW</span>
             </div>
             <h2 class="text-3xl md:text-5xl font-bold uppercase tracking-tight text-day-primary dark:text-night-primary">
-              HOW I WORK
+              HOW I COLLABORATE
             </h2>
           </div>
           <div class="font-mono text-xs text-day-secondary dark:text-night-secondary">
-            STRUCTURED CREATIVE PROCESS
+            TRANSPARENT 6-STEP PROCESS
           </div>
         </div>
 
@@ -555,15 +610,15 @@
             <div class="font-mono text-3xl font-bold text-day-accent dark:text-night-accent">01</div>
             <div>
               <h3 class="font-bold text-lg uppercase tracking-wider text-day-primary dark:text-night-primary mb-1">DISCOVER</h3>
-              <p class="font-mono text-[11px] text-day-secondary dark:text-night-secondary leading-relaxed">Understanding project goals, audience context, and design constraints.</p>
+              <p class="font-mono text-[11px] text-day-secondary dark:text-night-secondary leading-relaxed">Analyzing business goals, audience context, and competitor SEO gaps.</p>
             </div>
           </div>
 
           <div class="workflow-step p-6 border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface flex flex-col justify-between h-56 reveal-item">
             <div class="font-mono text-3xl font-bold text-day-accent dark:text-night-accent">02</div>
             <div>
-              <h3 class="font-bold text-lg uppercase tracking-wider text-day-primary dark:text-night-primary mb-1">DEFINE</h3>
-              <p class="font-mono text-[11px] text-day-secondary dark:text-night-secondary leading-relaxed">Structuring site map, layout direction, typography, and visual rules.</p>
+              <h3 class="font-bold text-lg uppercase tracking-wider text-day-primary dark:text-night-primary mb-1">MAP &amp; SEO</h3>
+              <p class="font-mono text-[11px] text-day-secondary dark:text-night-secondary leading-relaxed">Structuring site architecture, sitemaps, and keyword hierarchy.</p>
             </div>
           </div>
 
@@ -571,7 +626,7 @@
             <div class="font-mono text-3xl font-bold text-day-accent dark:text-night-accent">03</div>
             <div>
               <h3 class="font-bold text-lg uppercase tracking-wider text-day-primary dark:text-night-primary mb-1">DESIGN</h3>
-              <p class="font-mono text-[11px] text-day-secondary dark:text-night-secondary leading-relaxed">Crafting high-end, responsive interfaces with meticulous visual hierarchy.</p>
+              <p class="font-mono text-[11px] text-day-secondary dark:text-night-secondary leading-relaxed">Crafting high-end, responsive UI/UX with clear typography and trust cues.</p>
             </div>
           </div>
 
@@ -579,15 +634,15 @@
             <div class="font-mono text-3xl font-bold text-day-accent dark:text-night-accent">04</div>
             <div>
               <h3 class="font-bold text-lg uppercase tracking-wider text-day-primary dark:text-night-primary mb-1">BUILD</h3>
-              <p class="font-mono text-[11px] text-day-secondary dark:text-night-secondary leading-relaxed">Translating designs into clean, fast, and accessible frontend code.</p>
+              <p class="font-mono text-[11px] text-day-secondary dark:text-night-secondary leading-relaxed">Translating designs into clean HTML5, Tailwind CSS, or custom WordPress.</p>
             </div>
           </div>
 
           <div class="workflow-step p-6 border border-day-border dark:border-night-border bg-day-surface dark:bg-night-surface flex flex-col justify-between h-56 reveal-item">
             <div class="font-mono text-3xl font-bold text-day-accent dark:text-night-accent">05</div>
             <div>
-              <h3 class="font-bold text-lg uppercase tracking-wider text-day-primary dark:text-night-primary mb-1">REFINE</h3>
-              <p class="font-mono text-[11px] text-day-secondary dark:text-night-secondary leading-relaxed">Testing interactions, responsive breakpoints, motion smoothness, and speed.</p>
+              <h3 class="font-bold text-lg uppercase tracking-wider text-day-primary dark:text-night-primary mb-1">OPTIMIZE</h3>
+              <p class="font-mono text-[11px] text-day-secondary dark:text-night-secondary leading-relaxed">Rigorous speed tuning, mobile testing, schema markup, and metadata.</p>
             </div>
           </div>
 
@@ -595,7 +650,7 @@
             <div class="font-mono text-3xl font-bold text-day-accent dark:text-night-accent">06</div>
             <div>
               <h3 class="font-bold text-lg uppercase tracking-wider text-day-primary dark:text-night-primary mb-1">LAUNCH</h3>
-              <p class="font-mono text-[11px] text-day-secondary dark:text-night-secondary leading-relaxed">Final optimization, SEO validation, cross-browser check, and deployment.</p>
+              <p class="font-mono text-[11px] text-day-secondary dark:text-night-secondary leading-relaxed">Production deployment, Search Console setup, and client handover.</p>
             </div>
           </div>
 
@@ -604,11 +659,12 @@
       </div>
     </section>
 
+    <!-- Core Philosophy Quote Section -->
     <section class="relative z-10 py-32 px-6 md:px-16 lg:px-24 bg-day-surface/30 dark:bg-night-surface/10 border-t border-day-border/60 dark:border-night-border/40">
       <div class="max-w-5xl mx-auto text-center space-y-8">
         
         <div class="font-mono text-xs uppercase tracking-widest text-day-accent dark:text-night-accent reveal-item">
-          <span>04 // CORE PRINCIPLE</span>
+          <span>04 // CORE PHILOSOPHY</span>
         </div>
 
         <blockquote class="text-4xl sm:text-6xl md:text-7xl font-bold uppercase tracking-tighter text-day-primary dark:text-night-primary leading-tight reveal-item">
@@ -616,61 +672,62 @@
         </blockquote>
 
         <blockquote class="text-3xl sm:text-5xl md:text-6xl font-serif italic text-day-accent dark:text-night-accent leading-tight reveal-item">
-          IT'S HOW IT WORKS.
+          IT'S HOW IT RANKS &amp; CONVERTS.
         </blockquote>
 
         <p class="text-base sm:text-xl font-light text-day-secondary dark:text-night-secondary max-w-2xl mx-auto leading-relaxed reveal-item pt-4">
-          Every decision should improve clarity, usability, performance, or the overall experience.
+          Every line of code and visual element should serve a clear business purpose—building credibility and generating inquiries.
         </p>
 
       </div>
     </section>
 
+    <!-- What You Get Deliverables Matrix -->
     <section class="relative z-10 py-32 px-6 md:px-16 lg:px-24 border-t border-day-border/60 dark:border-night-border/40">
       <div class="max-w-6xl mx-auto">
         
         <div class="font-mono text-xs uppercase tracking-widest text-day-accent dark:text-night-accent mb-12 reveal-item">
-          <span>05 // DELIVERABLES</span>
+          <span>05 // DELIVERABLES MATRIX</span>
         </div>
 
         <h2 class="text-3xl sm:text-5xl font-bold uppercase tracking-tight text-day-primary dark:text-night-primary mb-16 reveal-item">
-          WHAT YOU GET
+          WHAT YOU GET WITH EVERY PROJECT
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 font-mono text-lg sm:text-2xl uppercase tracking-wider">
           
           <div class="p-6 border-b border-day-border dark:border-night-border flex items-center justify-between group hover:border-day-accent dark:hover:border-night-accent transition-colors reveal-item">
-            <span class="group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">STRATEGIC THINKING</span>
+            <span class="group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">STRATEGIC GOAL ALIGNMENT</span>
             <span class="text-xs text-day-secondary dark:text-night-secondary">[01]</span>
           </div>
 
           <div class="p-6 border-b border-day-border dark:border-night-border flex items-center justify-between group hover:border-day-accent dark:hover:border-night-accent transition-colors reveal-item">
-            <span class="group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">CLEAR VISUAL DIRECTION</span>
+            <span class="group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">CUSTOM UI / UX DESIGN</span>
             <span class="text-xs text-day-secondary dark:text-night-secondary">[02]</span>
           </div>
 
           <div class="p-6 border-b border-day-border dark:border-night-border flex items-center justify-between group hover:border-day-accent dark:hover:border-night-accent transition-colors reveal-item">
-            <span class="group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">RESPONSIVE INTERFACE</span>
+            <span class="group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">MOBILE-FIRST RESPONSIVENESS</span>
             <span class="text-xs text-day-secondary dark:text-night-secondary">[03]</span>
           </div>
 
           <div class="p-6 border-b border-day-border dark:border-night-border flex items-center justify-between group hover:border-day-accent dark:hover:border-night-accent transition-colors reveal-item">
-            <span class="group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">CLEAN DEVELOPMENT</span>
+            <span class="group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">CLEAN SEMANTIC CODE</span>
             <span class="text-xs text-day-secondary dark:text-night-secondary">[04]</span>
           </div>
 
           <div class="p-6 border-b border-day-border dark:border-night-border flex items-center justify-between group hover:border-day-accent dark:hover:border-night-accent transition-colors reveal-item">
-            <span class="group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">PERFORMANCE FOCUS</span>
+            <span class="group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">LIGHTNING SPEED &amp; CORE WEB VITALS</span>
             <span class="text-xs text-day-secondary dark:text-night-secondary">[05]</span>
           </div>
 
           <div class="p-6 border-b border-day-border dark:border-night-border flex items-center justify-between group hover:border-day-accent dark:hover:border-night-accent transition-colors reveal-item">
-            <span class="group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">SEO FOUNDATION</span>
+            <span class="group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">LOCAL SEO &amp; SCHEMA MARKUP</span>
             <span class="text-xs text-day-secondary dark:text-night-secondary">[06]</span>
           </div>
 
           <div class="p-6 border-b border-day-border dark:border-night-border flex items-center justify-between group hover:border-day-accent dark:hover:border-night-accent transition-colors reveal-item md:col-span-2">
-            <span class="group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">MAINTAINABLE STRUCTURE</span>
+            <span class="group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors">MAINTAINABLE STRUCTURE &amp; HANDOVER</span>
             <span class="text-xs text-day-secondary dark:text-night-secondary">[07]</span>
           </div>
 
@@ -679,23 +736,24 @@
       </div>
     </section>
 
+    <!-- Call to Action Section -->
     <section class="relative z-10 py-32 px-6 md:px-16 lg:px-24 border-t-2 border-day-primary dark:border-night-primary bg-day-surface dark:bg-night-surface">
       <div class="max-w-5xl mx-auto text-center space-y-8">
         
         <div class="font-mono text-xs uppercase tracking-widest text-day-accent dark:text-night-accent reveal-item">
-          <span>HAVE A PROJECT IN MIND?</span>
+          <span>READY TO GROW YOUR ONLINE PRESENCE?</span>
         </div>
 
         <h2 class="text-4xl sm:text-7xl font-bold uppercase tracking-tighter text-day-primary dark:text-night-primary leading-none reveal-item">
-          LET'S BUILD SOMETHING USEFUL.
+          LET'S BUILD A WEBSITE THAT RANKS &amp; CONVERTS.
         </h2>
 
         <div class="flex flex-wrap justify-center gap-6 pt-6 reveal-item">
           <a href="contact.html" class="px-8 py-4 bg-day-primary dark:bg-night-primary text-day-bg dark:text-night-bg font-mono text-xs uppercase tracking-widest hover:bg-day-accent dark:hover:bg-night-accent hover:text-white transition-colors duration-300 cursor-open">
-            START A PROJECT
+            REQUEST A FREE WEBSITE AUDIT →
           </a>
           <a href="projects.html" class="px-8 py-4 border border-day-border dark:border-night-border font-mono text-xs uppercase tracking-widest text-day-primary dark:text-night-primary hover:border-day-accent dark:hover:border-night-accent transition-colors duration-300 cursor-open">
-            VIEW MY WORK
+            VIEW RECENT PROJECTS →
           </a>
         </div>
 
@@ -704,7 +762,28 @@
 
   </main>
 
-  <div id="page-transition" class="fixed inset-0 z-[90] bg-day-primary dark:bg-night-primary translate-y-full transition-transform duration-500 pointer-events-none"></div>
+  <!-- Visible Semantic Footer for SEO & Navigation -->
+  <footer class="relative z-10 border-t border-day-border dark:border-night-border bg-day-bg dark:bg-night-bg px-6 md:px-16 lg:px-24 py-12 font-mono text-xs text-day-secondary dark:text-night-secondary">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-3">
+        <span class="font-bold text-day-primary dark:text-night-primary">MOINWEB.INFO</span>
+        <span>—</span>
+        <span>FREELANCE WEB DESIGN &amp; SEO WORLDWIDE</span>
+      </div>
+      <div class="flex flex-wrap justify-center gap-6 text-[11px] uppercase tracking-widest">
+        <a href="index.html" class="hover:text-day-accent dark:hover:text-night-accent transition-colors">Home</a>
+        <a href="about.html" class="hover:text-day-accent dark:hover:text-night-accent transition-colors">About</a>
+        <a href="projects.html" class="hover:text-day-accent dark:hover:text-night-accent transition-colors">Projects</a>
+        <a href="blog.html" class="hover:text-day-accent dark:hover:text-night-accent transition-colors">Blog</a>
+        <a href="contact.html" class="hover:text-day-accent dark:hover:text-night-accent transition-colors">Contact</a>
+      </div>
+      <div class="text-[10px] tracking-widest uppercase">
+        &copy; 2026 MOINWEB. ALL RIGHTS RESERVED.
+      </div>
+    </div>
+  </footer>
+
+  <div id="page-transition" class="fixed inset-0 z-[90] bg-day-primary dark:bg-night-primary translate-y-full transition-transform duration-500 pointer-events-none" aria-hidden="true"></div>
   
   <!--Start of Tawk.to Script-->
   <script type="text/javascript">
@@ -720,7 +799,6 @@
   </script>
   <!--End of Tawk.to Script-->
 
-  
   <script>
     document.addEventListener('DOMContentLoaded', () => {
 
@@ -731,37 +809,37 @@
         '01': {
           number: '01',
           title: 'WEB DESIGN',
-          description: 'Clean, purposeful interfaces designed around strong visual hierarchy and user experience.',
-          outputs: ['Strategy', 'Visual Direction', 'Interface Design', 'Responsive Layout', 'Interaction Design']
+          description: 'Clean, high-converting interfaces designed around strong visual hierarchy, professional trust signals, and user experience.',
+          outputs: ['Conversion Strategy', 'Visual Direction', 'Interface Design', 'Responsive Layout', 'Trust Signalling']
         },
         '02': {
           number: '02',
-          title: 'UI / UX DESIGN',
-          description: 'Thoughtful interface systems that make digital products easier and more intuitive to use.',
+          title: 'UI / UX SYSTEMS',
+          description: 'Thoughtful interface systems that make digital products, web platforms, and business applications intuitive and frictionless.',
           outputs: ['User Flow Mapping', 'Wireframing', 'Design Systems', 'Component Libraries', 'Usability Optimization']
         },
         '03': {
           number: '03',
-          title: 'FRONTEND DEVELOPMENT',
-          description: 'Responsive, polished frontend experiences built with clean and maintainable code.',
-          outputs: ['HTML5 / Tailwind CSS', 'Vanilla JavaScript', 'CSS Motion & Depth', 'Responsive Adaptation', 'Clean Code Architecture']
+          title: 'LOCAL SEO',
+          description: 'Google Map Pack optimization, sitemap restructuring, and geo-targeted keywords that drive local customer phone calls and inquiries.',
+          outputs: ['Google Business Profile', 'Sitemap Architecture', 'Local Schema Markup', 'Geo-Targeted Keywords', 'Search Console Audit']
         },
         '04': {
           number: '04',
           title: 'WORDPRESS DEVELOPMENT',
-          description: 'Custom WordPress websites built for flexibility, performance, and easy content management.',
-          outputs: ['Custom Theme Build', 'Gutenberg Integration', 'Content Architecture', 'Plugin Optimization', 'Client Handover Training']
+          description: 'Custom WordPress websites built for lightning speed, secure content management, and effortless client handovers.',
+          outputs: ['Custom Theme Build', 'Gutenberg Blocks', 'Content Architecture', 'Plugin Optimization', 'Speed & Security']
         },
         '05': {
           number: '05',
           title: 'RESPONSIVE DESIGN',
-          description: 'Interfaces that adapt naturally across desktop, tablet, and mobile.',
-          outputs: ['Mobile-First Strategy', 'Fluid Typography', 'Touch-Friendly UI', 'Breakpoint Optimization', 'Cross-Device Testing']
+          description: 'Thumb-friendly, mobile-first interfaces that adapt naturally and flawlessly across desktop, tablet, and smartphones.',
+          outputs: ['Mobile-First Strategy', 'Fluid Typography', 'Touch-Friendly UI', 'Breakpoint Optimization', 'Cross-Device QA']
         },
         '06': {
           number: '06',
           title: 'SEO & PERFORMANCE',
-          description: 'Technical improvements that help websites become faster, more accessible, and easier to discover.',
+          description: 'Technical improvements including Core Web Vitals tuning and semantic HTML that make websites fast and search-friendly.',
           outputs: ['Core Web Vitals', 'Semantic HTML5', 'Speed Optimization', 'Search Engine Metadata', 'Accessibility Compliance']
         }
       };
@@ -826,12 +904,14 @@
         cursorX += (mouseX - cursorX) * 0.2;
         cursorY += (mouseY - cursorY) * 0.2;
 
-        cursorDot.style.left = `${cursorX}px`;
-        cursorDot.style.top = `${cursorY}px`;
+        if (cursorDot) {
+          cursorDot.style.left = `${cursorX}px`;
+          cursorDot.style.top = `${cursorY}px`;
+        }
 
         requestAnimationFrame(renderCursor);
       }
-      requestAnimationFrame(renderCursor);
+      renderCursor();
 
       const openTriggers = document.querySelectorAll('.cursor-open, a, button');
       openTriggers.forEach(element => {
@@ -871,12 +951,10 @@
         const data = servicesData[key];
         if (!data) return;
 
-        // Update Text
         detailNumber.textContent = data.number;
         detailTitle.textContent = data.title;
         detailDesc.textContent = data.description;
 
-        // Update Outputs
         detailOutputs.innerHTML = '';
         data.outputs.forEach(output => {
           const pill = document.createElement('span');
@@ -885,7 +963,6 @@
           detailOutputs.appendChild(pill);
         });
 
-        // Update Selector Button Active States
         selectorBtns.forEach(btn => {
           if (btn.getAttribute('data-target') === key) {
             btn.classList.add('border-day-accent', 'dark:border-night-accent', 'text-day-accent', 'dark:text-night-accent');
@@ -894,7 +971,6 @@
           }
         });
 
-        // Update Explorer Grid Active Highlight
         serviceNodes.forEach(node => {
           if (node.getAttribute('data-service') === key) {
             node.classList.add('active-focus');
@@ -904,7 +980,6 @@
         });
       }
 
-      // Event Listeners for Grid Hover & Click
       serviceNodes.forEach(node => {
         node.addEventListener('mouseenter', () => {
           const key = node.getAttribute('data-service');
@@ -918,7 +993,6 @@
         });
       });
 
-      // Event Listeners for Selector Buttons
       selectorBtns.forEach(btn => {
         btn.addEventListener('click', () => {
           const key = btn.getAttribute('data-target');
@@ -926,7 +1000,6 @@
         });
       });
 
-      // Initialize default
       updateServiceFocus('01');
 
       /* -------------------------------------------------------------
