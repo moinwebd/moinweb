@@ -35,7 +35,7 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="512x512" href="/assets/android-chrome-512x512.png">
@@ -144,8 +144,8 @@
       #loader.moinweb-welcome .welcome-enter { width:100%; justify-content:center; }
     }
     #composition-wrapper.moinweb-home-hidden { opacity:0 !important; transform:translateY(20px) !important; transition:opacity 850ms cubic-bezier(.16,1,.3,1), transform 850ms cubic-bezier(.16,1,.3,1) !important; pointer-events:none; }
-    #composition-wrapper.moinweb-home-visible { opacity:1 !important; pointer-events:auto; transition:opacity 850ms cubic-bezier(.16,1,.3,1) !important; }
-    body.moinweb-intro-active { overflow:hidden; }
+    #composition-wrapper.moinweb-home-visible { opacity:1 !important; transform:none; pointer-events:auto; transition:opacity 850ms cubic-bezier(.16,1,.3,1), transform 850ms cubic-bezier(.16,1,.3,1) !important; }
+    body.moinweb-intro-active { overflow:hidden; height:100vh; height:100dvh; }
     @keyframes moinweb-welcome-in { to { opacity:1; transform:translateY(0); } }
     @keyframes moinweb-grid-drift { from { transform:perspective(900px) rotateX(58deg) translate3d(0,20%,0); } to { transform:perspective(900px) rotateX(58deg) translate3d(-72px,24%,0); } }
     @keyframes moinweb-line-scan { 0%,100% { transform:translateY(-12%); opacity:0; } 20%,70% { opacity:1; } 50% { transform:translateY(12%); } }
@@ -239,7 +239,7 @@
     </div>
   </div>
 
-  <main id="composition-wrapper" class="relative w-full min-h-screen overflow-hidden viewport-canvas bg-grid-pattern flex flex-col justify-between p-6 md:p-12 lg:p-16 opacity-0 transition-opacity duration-1000">
+  <main id="composition-wrapper" class="relative w-full min-h-screen overflow-x-hidden viewport-canvas bg-grid-pattern flex flex-col justify-between p-6 md:p-12 lg:p-16 opacity-0 transition-opacity duration-1000">
 
     <div class="layer-bg absolute inset-0 pointer-events-none z-0 overflow-hidden" id="spatial-canvas" aria-hidden="true">
       <div class="absolute top-0 left-1/3 w-[1px] h-full bg-day-border/40 dark:bg-night-border/30"></div>
@@ -336,7 +336,7 @@
 
     </div>
 
-<div class="layer-mid relative z-20 my-4 border-y border-day-border dark:border-night-border py-2.5 overflow-hidden select-none" data-depth="0.02">
+    <div class="layer-mid relative z-20 my-4 border-y border-day-border dark:border-night-border py-2.5 overflow-hidden select-none" data-depth="0.02">
       <div class="animate-marquee font-mono text-xs uppercase tracking-[0.25em] text-day-secondary dark:text-night-secondary whitespace-nowrap">
         <span class="mx-6">WEBSITE DESIGN</span> <span class="text-day-accent dark:text-night-accent" aria-hidden="true">•</span>
         <span class="mx-6">SEO &amp; LOCAL SEO</span> <span class="text-day-accent dark:text-night-accent" aria-hidden="true">•</span>
@@ -411,7 +411,7 @@
           </li>
 
           <li>
-            <a href="recommendations.html" class="nav-item group inline-files items-center gap-2 text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
+            <a href="recommendations.html" class="nav-item group inline-flex items-center gap-2 text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
               <span aria-hidden="true" class="text-[10px] text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent group-hover:-translate-y-1 transition-transform duration-300">05</span>
               <span class="font-bold relative">
                 RECOMMENDATIONS
@@ -476,6 +476,7 @@
 
       const showHomepageImmediately = () => {
         document.body.classList.remove('moinweb-intro-active');
+        document.body.style.overflow = '';
         compositionWrapper.classList.remove('opacity-0', 'moinweb-home-hidden');
         compositionWrapper.classList.add('moinweb-home-visible');
         loader.classList.add('opacity-0', 'pointer-events-none');
@@ -505,7 +506,11 @@
         loader.classList.add('is-exiting');
         compositionWrapper.classList.add('moinweb-home-visible');
         compositionWrapper.classList.remove('moinweb-home-hidden', 'opacity-0');
-        document.body.classList.remove('moinweb-intro-archive');
+        
+        /* FIXED BUG: Removed 'moinweb-intro-active' properly and restored scroll */
+        document.body.classList.remove('moinweb-intro-active');
+        document.body.style.overflow = '';
+        window.scrollTo(0, 0);
 
         window.setTimeout(() => {
           loader.style.display = 'none';
