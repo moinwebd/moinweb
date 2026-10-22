@@ -1,4 +1,14 @@
+# robots.txt for https://moinweb.info/
+# Optimized for Google Search, Image Search & AI Search Engines (2026)
+
 User-agent: *
 Allow: /
+Allow: /assets/
+Allow: /blog/
 
+# Prevent indexing of internal system or git files (if any)
+Disallow: /.git/
+Disallow: /cgi-bin/
+
+# Primary XML Sitemap Location
 Sitemap: https://moinweb.info/sitemap-1.xml
