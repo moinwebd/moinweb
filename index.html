@@ -6,7 +6,6 @@
 
   <title>Freelance Website Design &amp; Local SEO Services Worldwide | MoinWeb</title>
   <meta name="description" content="Hire Moinuddin at MoinWeb for expert freelance website design, WordPress development, UI/UX, and result-driven Local SEO services for small businesses worldwide.">
-  <meta name="keywords" content="freelance web designer, local SEO specialist, website design services, WordPress developer, Moinuddin, MoinWeb worldwide">
   <meta name="author" content="Moinuddin">
   <link rel="canonical" href="https://moinweb.info/">
   <meta name="robots" content="index, follow, max-image-preview:large">
@@ -251,7 +250,7 @@
     </div>
 
     <header class="layer-fore relative z-30 flex justify-between items-center font-mono text-xs tracking-wider">
-      <a href="index.html" class="flex flex-col leading-none group">
+      <a href="/" class="flex flex-col leading-none group">
         <span class="text-2xl font-black tracking-wider text-day-primary dark:text-night-primary group-hover:text-day-accent dark:group-hover:text-night-accent transition-colors duration-300">
           MOINWEB
         </span>
@@ -288,7 +287,6 @@
         </div>
 
         <h1 class="font-bold tracking-tighter uppercase leading-[0.85] text-day-primary dark:text-night-primary select-none">
-          <span class="sr-only">MoinWeb — Freelance Website Design and Local SEO Services Worldwide by Moinuddin: </span>
           <span class="block text-5xl sm:text-7xl md:text-8xl lg:text-[7vw] transition-transform duration-300 hover:translate-x-2">
             FREELANCE
           </span>
@@ -306,6 +304,22 @@
           <span>SEO &amp; LOCAL SEO</span>
           <span>•</span>
           <span>WORDPRESS &amp; UI/UX</span>
+        </div>
+
+        <!-- NEW SEO CONTENT & CTA SECTION -->
+        <div class="mt-8 max-w-xl pr-4">
+          <h2 class="sr-only">Expert Web Designer for Service Businesses</h2>
+          <p class="text-sm sm:text-base text-day-secondary dark:text-night-secondary leading-relaxed font-sans font-medium">
+            I'm <strong>Moinuddin</strong>. I build high-converting WordPress websites and implement proven Local SEO strategies for plumbing contractors, law firms, and service-based businesses across the US, UK, and Canada. Ready to rank higher on Google Maps and drive 24/7 service calls?
+          </p>
+          <div class="mt-8 flex flex-wrap items-center gap-4 font-mono text-xs font-bold uppercase tracking-widest">
+            <a href="contact.html" class="inline-flex items-center justify-center px-6 py-3.5 bg-day-accent dark:bg-night-accent text-white dark:text-black rounded-full hover:scale-105 transition-transform duration-300 shadow-[0_0_20px_rgba(255,92,53,0.3)]">
+              Get a Free Audit
+            </a>
+            <a href="projects.html" class="inline-flex items-center justify-center px-6 py-3.5 border border-day-border dark:border-night-border text-day-primary dark:text-night-primary rounded-full hover:border-day-accent dark:hover:border-night-accent transition-colors duration-300">
+              View Work
+            </a>
+          </div>
         </div>
       </div>
 
@@ -361,7 +375,7 @@
         <ul class="flex flex-wrap md:flex-nowrap justify-between gap-x-6 gap-y-4 font-mono text-xs tracking-widest uppercase">
 
           <li>
-            <a href="index.html" class="nav-item group inline-flex items-center gap-2 text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
+            <a href="/" class="nav-item group inline-flex items-center gap-2 text-day-primary dark:text-night-primary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">
               <span aria-hidden="true" class="text-[10px] text-day-secondary dark:text-night-secondary group-hover:text-day-accent dark:group-hover:text-night-accent group-hover:-translate-y-1 transition-transform duration-300">00</span>
               <span class="font-bold relative">
                 HOME
@@ -628,7 +642,7 @@
 
       /* 5. PAGE TRANSITION FOR LINKS */
       const transitionOverlay = document.getElementById('page-transition');
-      document.querySelectorAll('a[href$=".html"]').forEach(link => {
+      document.querySelectorAll('a[href$=".html"], a[href="/"]').forEach(link => {
         link.addEventListener('click', (e) => {
           const targetUrl = link.getAttribute('href');
           if (targetUrl && !targetUrl.startsWith('#') && !targetUrl.startsWith('http')) {
