@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
+  <script>document.documentElement.classList.add('js');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PLX7TTBB"></script>
@@ -218,7 +219,7 @@
     }
 
     /* Scroll Reveal & Animations */
-    .reveal-item {
+    html.js .reveal-item {
       opacity: 0;
       transform: translateY(40px);
       transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
@@ -229,7 +230,7 @@
       transform: translateY(0);
     }
 
-    .clip-reveal {
+    html.js .clip-reveal {
       clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
       transition: clip-path 1.2s cubic-bezier(0.16, 1, 0.3, 1);
       will-change: clip-path;
@@ -336,6 +337,7 @@
       * { cursor: auto !important; }
     }
   </style>
+  <noscript><style>.reveal-item{opacity:1 !important;transform:none !important;}.clip-reveal{clip-path:none !important;}</style></noscript>
 </head>
 <body class="min-h-screen selection:bg-day-accent selection:text-white dark:selection:bg-night-accent dark:selection:text-black">
 
@@ -351,6 +353,9 @@
     </div>
 
     <div class="flex items-center gap-4">
+      <a href="tel:+8801775864306" aria-label="Call MoinWeb on +8801775864306" class="hidden lg:inline-flex items-center gap-2 cursor-pointer border border-white/20 px-3 py-1.5 rounded-full backdrop-blur-md hover:border-white transition-all duration-300">
+        <span class="text-[10px] font-mono uppercase tracking-widest text-white">CALL +8801775864306</span>
+      </a>
       <button id="theme-toggle" aria-label="Toggle Theme" class="flex items-center gap-2 cursor-pointer border border-white/20 px-3 py-1.5 rounded-full backdrop-blur-md hover:border-white transition-all duration-300">
         <span class="text-[10px] font-mono uppercase tracking-widest text-white">MODE</span>
         <div class="w-2.5 h-2.5 rounded-full border border-white flex items-center justify-center p-0.5">
@@ -762,6 +767,7 @@
       </div>
       <div class="flex flex-wrap justify-center gap-6 text-[11px] uppercase tracking-widest">
         <a href="index.html" class="hover:text-day-accent dark:hover:text-night-accent transition-colors">Home</a>
+        <a href="tel:+8801775864306" class="hover:text-day-accent dark:hover:text-night-accent transition-colors">+8801775864306</a>
         <a href="services.html" class="hover:text-day-accent dark:hover:text-night-accent transition-colors">Services</a>
         <a href="projects.html" class="hover:text-day-accent dark:hover:text-night-accent transition-colors">Projects</a>
         <a href="blog.html" class="hover:text-day-accent dark:hover:text-night-accent transition-colors">Blog</a>
@@ -915,6 +921,24 @@
       }, observerOptions);
 
       revealItems.forEach(item => revealObserver.observe(item));
+      /* P0 safety net: never leave content hidden if the reveal
+         observer never fires (slow/blocked JS) or if
+         IntersectionObserver is unavailable. Only items already
+         in the viewport are revealed here; the scroll animation
+         for below-the-fold items is unchanged. */
+      if (typeof IntersectionObserver === 'undefined') {
+        revealItems.forEach(item => item.classList.add('revealed'));
+      } else {
+        setTimeout(() => {
+          revealItems.forEach(item => {
+            if (!item.classList.contains('revealed')) {
+              const rect = item.getBoundingClientRect();
+              if (rect.top < window.innerHeight && rect.bottom > 0) item.classList.add('revealed');
+            }
+          });
+        }, 1500);
+      }
+
 
       /* -------------------------------------------------------------
          5. SPATIAL MOUSE PARALLAX & PORTRAIT / SOCIAL DOCK 3D RESPONSE
