@@ -61,6 +61,7 @@
     "description": "Freelance website design, WordPress development, and Local SEO services for small businesses worldwide.",
     "areaServed": [{"@type":"Country","name":"United States"},{"@type":"Country","name":"United Kingdom"},{"@type":"Country","name":"Canada"}],
     "email": "hey.mainuddin@gmail.com",
+    "telephone": "+8801775864306",
     "serviceType": [
       "Website Design",
       "Local SEO",
@@ -217,8 +218,10 @@
       #cursor-dot { display:none !important; }
       * { cursor:auto !important; }
     }
+    html.no-aos [data-aos] { opacity: 1 !important; transform: none !important; }
   </style>
 
+  <noscript><style>[data-aos]{opacity:1 !important;transform:none !important;}</style></noscript>
 </head>
 <body class="min-h-screen selection:bg-day-accent selection:text-white dark:selection:bg-night-accent dark:selection:text-black">
 
@@ -330,6 +333,9 @@
         <span>FREELANCE / WORLDWIDE</span>
       </div>
 
+      <a href="tel:+8801775864306" aria-label="Call MoinWeb on +8801775864306" class="hidden md:inline-flex items-center gap-3 group cursor-pointer border border-day-border dark:border-night-border px-3 py-1.5 rounded-full bg-day-surface dark:bg-night-surface hover:border-day-accent dark:hover:border-night-accent transition-all duration-300">
+        <span class="text-[10px] uppercase tracking-widest text-day-secondary dark:text-night-secondary group-hover:text-day-primary dark:group-hover:text-night-primary">CALL +8801775864306</span>
+      </a>
       <button id="theme-toggle" aria-label="Toggle Theme" class="flex items-center gap-3 group cursor-pointer border border-day-border dark:border-night-border px-3 py-1.5 rounded-full bg-day-surface dark:bg-night-surface hover:border-day-accent dark:hover:border-night-accent transition-all duration-300">
         <span class="text-[10px] uppercase tracking-widest text-day-secondary dark:text-night-secondary group-hover:text-day-primary dark:group-hover:text-night-primary">MODE</span>
         <div class="w-3 h-3 rounded-full border border-day-primary dark:border-night-primary flex items-center justify-center p-0.5" aria-hidden="true">
@@ -568,6 +574,93 @@
         <a href="contact.html" class="inline-flex items-center justify-center px-6 py-3 font-mono text-xs font-bold uppercase tracking-[0.18em] cursor-open transition-colors duration-300 bg-day-accent dark:bg-night-accent text-white dark:text-black">Get a Free Audit</a>
         <a href="mailto:hey.mainuddin@gmail.com" class="inline-flex items-center justify-center px-6 py-3 font-mono text-xs font-bold uppercase tracking-[0.18em] cursor-open transition-colors duration-300 border border-day-border dark:border-night-border text-day-primary dark:text-night-primary hover:border-day-accent dark:hover:border-night-accent">hey.mainuddin@gmail.com</a>
       </div>
+
+      <!-- Free Audit form (P0): same endpoint/handling as contact.html.
+           Live delivery was NOT tested; Moin to confirm. -->
+      <form id="free-audit-form" class="mt-10 max-w-xl mx-auto text-left space-y-6" novalidate>
+        <div>
+          <label for="audit-name" class="block font-mono text-[11px] uppercase tracking-widest text-day-secondary dark:text-night-secondary mb-2">Your Name *</label>
+          <input type="text" id="audit-name" name="name" required autocomplete="name" placeholder="John Doe" class="w-full bg-transparent border border-day-border dark:border-night-border px-4 py-3 text-day-primary dark:text-night-primary placeholder:text-day-secondary/60 dark:placeholder:text-night-secondary/60 focus:border-day-accent dark:focus:border-night-accent focus:outline-none">
+          <span id="audit-error-name" class="hidden font-mono text-[10px] text-red-500 mt-1">Please enter your name.</span>
+        </div>
+        <div>
+          <label for="audit-email" class="block font-mono text-[11px] uppercase tracking-widest text-day-secondary dark:text-night-secondary mb-2">Your Email *</label>
+          <input type="email" id="audit-email" name="email" required autocomplete="email" placeholder="john@yourbusiness.com" class="w-full bg-transparent border border-day-border dark:border-night-border px-4 py-3 text-day-primary dark:text-night-primary placeholder:text-day-secondary/60 dark:placeholder:text-night-secondary/60 focus:border-day-accent dark:focus:border-night-accent focus:outline-none">
+          <span id="audit-error-email" class="hidden font-mono text-[10px] text-red-500 mt-1">Please enter a valid email address.</span>
+        </div>
+        <div>
+          <label for="audit-website" class="block font-mono text-[11px] uppercase tracking-widest text-day-secondary dark:text-night-secondary mb-2">Your Website URL</label>
+          <input type="url" id="audit-website" name="website" autocomplete="url" placeholder="https://yourbusiness.com" class="w-full bg-transparent border border-day-border dark:border-night-border px-4 py-3 text-day-primary dark:text-night-primary placeholder:text-day-secondary/60 dark:placeholder:text-night-secondary/60 focus:border-day-accent dark:focus:border-night-accent focus:outline-none">
+          <span class="block font-mono text-[10px] text-day-secondary dark:text-night-secondary mt-1">Optional — leave blank if you do not have a website yet.</span>
+        </div>
+        <input type="hidden" name="project_type" value="FREE WEBSITE AUDIT">
+        <button type="submit" id="audit-submit" class="w-full sm:w-auto px-10 py-4 bg-day-accent dark:bg-night-accent text-white dark:text-black font-mono text-xs font-bold uppercase tracking-widest hover:opacity-90 transition-opacity cursor-pointer">
+          <span id="audit-submit-text">Request My Free Audit</span>
+          <span aria-hidden="true"> →</span>
+        </button>
+        <p class="font-mono text-[10px] text-day-secondary dark:text-night-secondary uppercase">100% confidential &amp; free initial consultation. Typical response within 12–24 hours.</p>
+      </form>
+
+      <div id="free-audit-success" class="hidden mt-10 max-w-xl mx-auto text-left space-y-4 p-8 border border-day-accent dark:border-night-accent bg-day-accent/5 dark:bg-night-accent/5">
+        <div class="font-mono text-xs uppercase tracking-widest text-day-accent dark:text-night-accent font-bold">Request sent successfully.</div>
+        <p class="text-lg text-day-primary dark:text-night-primary font-light">Thank you — your free audit request has been received. I&apos;ll review your website and get back to you within 12–24 hours.</p>
+      </div>
+
+      <script>
+        (function () {
+          var form = document.getElementById('free-audit-form');
+          if (!form) return;
+          var FORM_ENDPOINT = "https://moinuddin-contact.hey-mainuddin.workers.dev/";
+          var submitBtn = document.getElementById('audit-submit');
+          var submitText = document.getElementById('audit-submit-text');
+          var successBox = document.getElementById('free-audit-success');
+          function showError(id, show) {
+            var el = document.getElementById(id);
+            if (el) el.classList.toggle('hidden', !show);
+          }
+          form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var name = document.getElementById('audit-name').value.trim();
+            var email = document.getElementById('audit-email').value.trim();
+            var website = document.getElementById('audit-website').value.trim();
+            var valid = true;
+            if (!name) { showError('audit-error-name', true); valid = false; } else { showError('audit-error-name', false); }
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('audit-error-email', true); valid = false; } else { showError('audit-error-email', false); }
+            if (!valid) return;
+            submitBtn.disabled = true;
+            submitText.textContent = 'SENDING...';
+            fetch(FORM_ENDPOINT, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                name: name,
+                email: email,
+                project_type: 'FREE WEBSITE AUDIT',
+                budget: website,
+                website: website,
+                message: 'Free website & Local SEO audit request from the homepage.' + (website ? ' Website: ' + website : ' (No website provided yet.)'),
+                page: window.location.href,
+                submitted_at: new Date().toISOString()
+              })
+            })
+            .then(function (response) {
+              return response.json().catch(function () { return {}; }).then(function (data) {
+                if (!response.ok || data.success === false) throw new Error(data.error || 'Unable to send message.');
+              });
+            })
+            .then(function () {
+              form.classList.add('hidden');
+              successBox.classList.remove('hidden');
+            })
+            .catch(function (error) {
+              console.error('Free audit form error:', error);
+              submitBtn.disabled = false;
+              submitText.textContent = 'Request My Free Audit';
+              alert('Sorry, your message could not be sent right now. Please try again or email hey.mainuddin@gmail.com directly.');
+            });
+          });
+        })();
+      </script>
     </section>
 
     <!-- Consistent Numbered Footer Navigation -->
@@ -624,6 +717,7 @@
     <div class="relative z-30 mt-8 pt-6 border-t border-day-border dark:border-night-border flex flex-col md:flex-row md:justify-between gap-6 font-mono text-[11px] uppercase tracking-widest">
       <div class="flex flex-col gap-2">
         <a href="mailto:hey.mainuddin@gmail.com" class="text-day-secondary dark:text-night-secondary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">hey.mainuddin@gmail.com</a>
+        <a href="tel:+8801775864306" class="text-day-secondary dark:text-night-secondary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">+8801775864306</a>
         <a href="sitemap.html" class="text-day-secondary dark:text-night-secondary hover:text-day-accent dark:hover:text-night-accent transition-colors duration-300 cursor-open">Sitemap</a>
         <span class="text-day-secondary dark:text-night-secondary">© 2026 MoinWeb. Freelance Web Design &amp; Local SEO.</span>
       </div>
@@ -669,6 +763,11 @@
           disable: window.matchMedia('(prefers-reduced-motion: reduce)').matches
         });
       }
+      /* P0 safety net: if the AOS library fails to load, never leave
+         animated content hidden. */
+      setTimeout(() => {
+        if (typeof AOS === 'undefined') document.documentElement.classList.add('no-aos');
+      }, 2000);
 
       /* 1. WELCOME PRELOADER */
       const loader = document.getElementById('loader');
