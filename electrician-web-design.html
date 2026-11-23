@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="dark">
 <head>
+  <script>document.documentElement.classList.add('js');</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-PLX7TTBB"></script>
@@ -190,9 +191,9 @@
     #cursor-dot.expand { width: 60px; height: 60px; background-color: #FFFFFF; mix-blend-mode: normal; box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
     #cursor-dot.expand span { opacity: 1; }
 
-    .reveal-item { opacity: 0; transform: translateY(40px); transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1); will-change: opacity, transform; }
+    html.js .reveal-item { opacity: 0; transform: translateY(40px); transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1); will-change: opacity, transform; }
     .reveal-item.revealed { opacity: 1; transform: translateY(0); }
-    .clip-reveal { clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%); transition: clip-path 1.2s cubic-bezier(0.16, 1, 0.3, 1); will-change: clip-path; }
+    html.js .clip-reveal { clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%); transition: clip-path 1.2s cubic-bezier(0.16, 1, 0.3, 1); will-change: clip-path; }
     .clip-reveal.revealed { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
     .feature-card { transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
     .feature-card:hover { border-color: var(--accent); transform: translateY(-6px); }
@@ -200,6 +201,7 @@
     @media (prefers-reduced-motion: reduce) { *, #cursor-dot { animation: none !important; transition: none !important; transform: none !important; } * { cursor: auto !important; } #cursor-dot { display: none !important; } .reveal-item { opacity: 1 !important; transform: none !important; } .clip-reveal { clip-path: none !important; } }
     @media (pointer: coarse) { #cursor-dot { display: none !important; } * { cursor: auto !important; } }
   </style>
+  <noscript><style>.reveal-item{opacity:1 !important;transform:none !important;}.clip-reveal{clip-path:none !important;}</style></noscript>
 </head>
 <body class="min-h-screen selection:bg-day-accent selection:text-white dark:selection:bg-night-accent dark:selection:text-black">
 
@@ -212,6 +214,9 @@
       <span>03 / ELECTRICIAN WEB DESIGN</span>
     </div>
     <div class="flex items-center gap-4">
+      <a href="tel:+8801775864306" aria-label="Call MoinWeb on +8801775864306" class="hidden lg:inline-flex items-center gap-2 cursor-pointer border border-white/20 px-3 py-1.5 rounded-full backdrop-blur-md hover:border-white transition-all duration-300">
+        <span class="text-[10px] font-mono uppercase tracking-widest text-white">CALL +8801775864306</span>
+      </a>
       <button id="theme-toggle" aria-label="Toggle Theme" class="flex items-center gap-2 cursor-pointer border border-white/20 px-3 py-1.5 rounded-full backdrop-blur-md hover:border-white transition-all duration-300">
         <span class="text-[10px] font-mono uppercase tracking-widest text-white">MODE</span>
         <div class="w-2.5 h-2.5 rounded-full border border-white flex items-center justify-center p-0.5">
@@ -719,6 +724,7 @@
       </div>
       <div class="flex flex-wrap justify-center gap-6 text-[11px] uppercase tracking-widest">
         <a href="index.html" class="hover:text-day-accent dark:hover:text-night-accent transition-colors cursor-open">Home</a>
+        <a href="tel:+8801775864306" class="hover:text-day-accent dark:hover:text-night-accent transition-colors">+8801775864306</a>
         <a href="about.html" class="hover:text-day-accent dark:hover:text-night-accent transition-colors cursor-open">About</a>
         <a href="services.html" class="hover:text-day-accent dark:hover:text-night-accent transition-colors cursor-open">Services</a>
         <a href="projects.html" class="hover:text-day-accent dark:hover:text-night-accent transition-colors cursor-open">Projects</a>
@@ -824,6 +830,24 @@
         });
       }, { threshold: 0.1 });
       revealItems.forEach(item => revealObserver.observe(item));
+      /* P0 safety net: never leave content hidden if the reveal
+         observer never fires (slow/blocked JS) or if
+         IntersectionObserver is unavailable. Only items already
+         in the viewport are revealed here; the scroll animation
+         for below-the-fold items is unchanged. */
+      if (typeof IntersectionObserver === 'undefined') {
+        revealItems.forEach(item => item.classList.add('revealed'));
+      } else {
+        setTimeout(() => {
+          revealItems.forEach(item => {
+            if (!item.classList.contains('revealed')) {
+              const rect = item.getBoundingClientRect();
+              if (rect.top < window.innerHeight && rect.bottom > 0) item.classList.add('revealed');
+            }
+          });
+        }, 1500);
+      }
+
 
       /* Parallax Logic */
       const parallaxElems = document.querySelectorAll('.parallax-elem');
