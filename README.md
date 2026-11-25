@@ -48,7 +48,7 @@ Have a website project or want to improve your existing website?
 **Let's discuss how your business can grow online.**
 
 - **Website:** https://moinweb.info
-- **Email:** hey.mainuddin@gmail.com
+- **Email:** hello@moinweb.info
 
 ## 📄 License
 
