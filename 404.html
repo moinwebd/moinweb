@@ -17,7 +17,6 @@
   <meta name="keywords" content="404, page not found, MoinWeb">
   <meta name="author" content="Moinuddin">
   <meta name="robots" content="noindex, follow">
-  <link rel="canonical" href="https://moinweb.info/404.html">
   <meta name="theme-color" content="#08090C">
   <link rel="sitemap" type="application/xml" href="https://moinweb.info/sitemap-1.xml">
 
@@ -193,7 +192,7 @@
       transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
       will-change: opacity, transform;
     }
-    .reveal-item.revealed {
+    html.js .reveal-item.revealed {
       opacity: 1;
       transform: translateY(0);
     }
@@ -203,7 +202,7 @@
       transition: clip-path 1.2s cubic-bezier(0.16, 1, 0.3, 1);
       will-change: clip-path;
     }
-    .clip-reveal.revealed {
+    html.js .clip-reveal.revealed {
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
     }
 
